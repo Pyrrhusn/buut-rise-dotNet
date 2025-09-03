@@ -1,16 +1,9 @@
-# Rise - GENT2
+### Buut + .NET - Group project
 
-## Team Members
+This project was undertaken on behalf of Buut.
+This repository is a multi-project solution developed in .Net framework. Each project is separated by concern, following the principles of Clean Architecture. This promotes a decoupled, maintainable codebase where core logic is isolated from external details.
 
-- Bram Rampelberg - <bram.rampelberg@student.hogent.be> - BramRampelberg
-- Xan Pinson - <xan.pinson@student.hogent.be> - Snowyxa
-- Pushwant Sagoo - <pushwant.sagoo@student.hogent.be> - PushwantSagoo
-- Sujan Sapkota - <sujan.sapkota@student.hogent.be> - sujansapkota2
-- Simon De Roeve - <simon.deroeve@student.hogent.be> - SimonDeRoeve
-- Bas Stokmans - <bas.stokmans@student.hogent.be> - baziniser
-- Bindo Thorpe - <bindo.thorpe@student.hogent.be> - bindothorpe
-
-## Technologies & Packages Used
+#### Technologies & Packages Used
 
 - [Postgres 16.4](https://www.postgresql.org/) - Database
 - [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) - Frontend
@@ -26,9 +19,9 @@
 - [Shouldly](https://docs.shouldly.org) - Helper for testing
 - [AspNetCore MVC testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing) - Integration testing
 
-## Running the application
+#### Running the application
 
-### Installation Instructions
+##### Installation Instructions
 
 > Note: Initially the database will not exist, so you will need to run the migrations to [create the database](#creation-of-the-database).
 
@@ -38,7 +31,7 @@
 4. Run the project using the `Rise.Server` project as the startup project: `dotnet run --project Rise.Server`
 5. The project should open in your default browser on port 5001.
 
-### Running In Production
+##### Running In Production
 
 To run the application in the `production` environment, add the following argument to the `dotnet run` command:
 
@@ -60,7 +53,7 @@ dotnet run --project Rise.Server --environment Production --urls "https://0.0.0.
 
 For more info on running the application in a specifying environment, check out the ASP.NET docs on [Using multiple environments in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-8.0) and the general [`dotnet run`](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run) commando.
 
-### Add Auth0 environment variables to appsettings.json and secrets to secrets.json
+##### Add Auth0 environment variables to appsettings.json and secrets to secrets.json
 
 ```
 "Auth0": {
@@ -74,9 +67,9 @@ For more info on running the application in a specifying environment, check out 
   },
 ```
 
-## Contribution
+#### Contribution
 
-### Branching flow
+##### Branching flow
 
 This project uses feature branches to introduce new features into `main`.
 On top of this the following is used to keep up the CI/CD pipeline:
@@ -123,9 +116,9 @@ gitGraph
 
 Feature *A* gets developed in it's respective feature branch `feature/a`. When it is done that feature ends up into `main` after approval. Which after goes to `staging` since its test succeeds. However during its lasts (manual) check ups, a mistake is noticed. This gets solved in the `fix/a` branch, which then goes back through the flow of going by `main` to `staging`. Now the feature is truly done finished and can end up on the `production` branch.
 
-## Database
+#### Database
 
-### Database connection
+##### Database connection
 
 Add the database connection string as a secret in the `Rise.Server` project via [.NET core User secrets](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.user-secrets) extension, by right-click on the `Rise.Server.csproj` and selecting `Manage User Secrets`.
 Add in given values and alter where needed in the connection string:
@@ -144,7 +137,7 @@ Alternative you could achieve the same via the CLI. Be present in the `Rise.Serv
 dotnet user-secrets set ConnectionStrings:PostgreSQL "User ID=[USER];Password=[PASSWORD];Host=localhost;Port=5432;Database=Hogent.Rise;Connection Lifetime=0;"
 ```
 
-### Creation of the database
+##### Creation of the database
 
 To create the database, run the following command in the main folder `Rise`
 
@@ -156,9 +149,9 @@ dotnet ef database update --startup-project Rise.Server --project Rise.Persisten
 
 Note: if you have troubles with EF, don't forget to install it via `dotnet tool install --global dotnet-ef`
 
-### Migrations
+#### Migrations
 
-#### Adding Migrations
+##### Adding Migrations
 
 Adapting the database schema can be done using migrations. To create a new migration, run the following command:
 
@@ -172,7 +165,7 @@ And then update the database to the latest migration using the following command
 dotnet ef database update --startup-project Rise.Server --project Rise.Persistence
 ```
 
-#### Removing Migrations
+##### Removing Migrations
 
 Updating to a specific migration using:
 
@@ -186,7 +179,7 @@ Now the latest migration can be removed via:
 dotnet ef migrations remove --startup-project Rise.Server --project Rise.Persistence
 ```
 
-## Testing
+#### Testing
 
 | Type of test  | Project  | Reason        | Framework        |  Runner        | Additional setup        |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -207,7 +200,7 @@ dotnet test
 
 > Some testing projects require more setup, please read further if this is your first time testing.
 
-### Unit Tests
+#### Unit Tests
 
 In the `Rise.Domain.Tests` project run the following:
 
@@ -217,9 +210,9 @@ dotnet test
 
 XUnit test runner will go through all of the tests.
 
-### Integration Tests
+#### Integration Tests
 
-#### Test database setup
+##### Test database setup
 
 > !!!! It is important that the database is different from the application database is this will be ***dropped*** and re-created automatically during tests to ensure the correct state !!!!
 
@@ -257,7 +250,7 @@ Auth0__BlazorClientId= "8vJtbXg2FptHGmKrpFl1tZwhiXOJZ57l",
 Auth0__BlazorClientSecret= "<secret>"
 ```
 
-#### Running integration tests
+##### Running integration tests
 
 In the `Rise.Server.Tests` project run the following:
 
@@ -287,9 +280,9 @@ $env:Auth0__BlazorClientSecret= "<secret>"
 dotnet run
 ```
 
-### E2E Tests
+#### E2E Tests
 
-### Authenticated Tests Configuration
+#### Authenticated Tests Configuration
 
 This setup is very similar to the setup of the [application's database](#database-connection). Only difference is that the secrets need to be added to the `Rise.Client.Tests` project.
 
@@ -318,7 +311,7 @@ This setup is very similar to the setup of the [application's database](#databas
 
 - Ensure the domain URL, where the client tests are running, is added to the *Allowed Callback URLs* (don't forget to add ***/authentication/login-callback/*** after the domain) as well as the *Logout* URLs in your Auth0 configuration.
 
-#### Installation of Playwright
+##### Installation of Playwright
 
 Make sure that [Playwright is fully installed](https://playwright.dev/dotnet/docs/intro). In short via `dotnet build` in the `Rise.Client` you can run initialise the setup:
 
@@ -328,7 +321,7 @@ pwsh bin/Debug/net8.0/playwright.ps1 install
 
 > Note: NUnit will be used as test runner, not MSTest.
 
-#### Running of Playwright
+##### Running of Playwright
 
 An important note is that the Client project has to be running.
 
