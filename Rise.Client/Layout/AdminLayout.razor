@@ -1,0 +1,29 @@
+﻿@using MudBlazor
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<AdminPageResources> Localizer
+@inherits LayoutComponentBase
+@*MainLayout has Width*@
+@layout MainLayout
+
+<PageTitle>@Localizer["DashbordPageTitle"]</PageTitle>
+
+<MudLayout Class="d-inline-flex py-3" elevation="0" Style="min-height: calc(100vh - 56px)">
+
+    @* Hide this for mobile *@
+    <MudHidden Breakpoint="Breakpoint.SmAndDown">
+        <div class="d-flex flex-column flex-grow-1 ml-2">
+            <MudContainer>
+                <MudText Typo="Typo.h6" Class="mb-2">@Localizer["DashbordPageTitle"]</MudText>
+            </MudContainer>
+            <MudNavMenu data-testid="nav-desktop-admin">
+                <AdminMenu />
+            </MudNavMenu>
+        </div>
+        <MudDivider Vertical="true" FlexItem="true" Class="mx-4" />
+    </MudHidden>
+
+    <MudContainer>
+        @Body
+    </MudContainer>
+</MudLayout>

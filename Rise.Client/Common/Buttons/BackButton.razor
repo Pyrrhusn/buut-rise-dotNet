@@ -1,0 +1,13 @@
+﻿@using MudBlazor
+
+@using Rise.Client.Localization.Common
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<CommonComponentResource> Localizer
+
+@*@ChildContent so that after "back" you can add something else ex. back to reservations*@
+
+<MudButton OnClick="@OnClick" Href="@Href" Color="Color.Primary" Variant="Variant.Text"
+    StartIcon="@Icons.Material.Filled.ArrowBack" @attributes="@AdditionalAttributes">
+    @Localizer["Back"]
+    @ChildContent
+</MudButton>

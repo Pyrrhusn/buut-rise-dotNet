@@ -1,0 +1,7 @@
+@using MudBlazor
+
+@*PRIMARY BUTTON: size can differ, by default medium*@
+<MudButton Size="@Size" OnClick="@OnClick" @attributes="@AdditionalAttributes" Color="Color.Primary"
+    Variant="Variant.Filled" Disabled="@Disabled">
+    @ChildContent
+</MudButton>

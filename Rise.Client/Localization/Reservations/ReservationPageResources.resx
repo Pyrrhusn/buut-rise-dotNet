@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="NoTimeSlotAvailable">
+		<value>Geen tijdsloten beschikbaar.</value>
+	</data>
+	<data name="Reserve">
+		<value>Reserveer</value>
+	</data>
+	<data name="YourReservations">
+		<value>Uw Reservaties</value>
+	</data>
+	<data name="NoReservationsFound">
+		<value>Geen reservaties gevonden.</value>
+	</data>
+	<data name="ReservationFor">
+		<value>Reservatie voor</value>
+	</data>
+	<data name="Boat">
+		<value>Boot</value>
+	</data>
+	<data name="Time">
+		<value>Tijd</value>
+	</data>
+	<data name="ViewDetails">
+		<value>Zie details</value>
+	</data>
+	<data name="Previous">
+		<value>Vorige</value>
+	</data>
+	<data name="Next">
+		<value>Volgende</value>
+	</data>
+	<data name="LoadingReservations">
+		<value>Reserveringen laden...</value>
+	</data>
+	<data name="ErrorLoadingReservations">
+		<value>Er is iets mis gegaan bij het ophalen van de reserveringen.</value>
+	</data>
+	<data name="Date">
+		<value>Datum</value>
+	</data>
+	<data name="FullyBooked">
+		<value>Volzet</value>
+	</data>
+	<data name="NotAvailable">
+		<value>Niet beschikbaar</value>
+	</data>
+	<data name="Available">
+		<value>Beschikbaar</value>
+	</data>
+	<data name="SelectDate">
+		<value>Selecteer datum</value>
+	</data>
+	<data name="CreateReservation" xml:space="preserve">
+		<value>Maak reservatie</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Annuleer</value>
+	</data>
+	<data name="Close" xml:space="preserve">
+		<value>Sluit</value>
+	</data>
+	<data name="DateAndTime" xml:space="preserve">
+		<value>Datum en Tijdstip</value>
+	</data>
+	<data name="Name" xml:space="preserve">
+		<value>Naam</value>
+	</data>
+	<data name="Email" xml:space="preserve">
+		<value>Email</value>
+	</data>
+	<data name="ProcessingPayment" xml:space="preserve">
+		<value>Betaling verwerken</value>
+	</data>
+	<data name="ReservationSuccessfulyCreated" xml:space="preserve">
+		<value>Uw reservatie is succesvol aangemaakt</value>
+	</data>
+	<data name="UpcomingReservations" xml:space="preserve">
+		<value>Aankomende reserveringen</value>
+	</data>
+	<data name="PastReservations" xml:space="preserve">
+		<value>Eerdere reserveringen</value>
+	</data>
+	<data name="NoUpcomingReservations" xml:space="preserve">
+		<value>U heeft geen aankomende reserveringen.</value>
+	</data>
+	<data name="NoPastReservations" xml:space="preserve">
+		<value>U heeft geen eerdere reserveringen.</value>
+	</data>
+	<data name="Past" xml:space="preserve">
+		<value>Verleden</value>
+	</data>
+	<data name="Upcoming" xml:space="preserve">
+		<value>Heden</value>
+	</data>
+	<data name="Cancel Reservation" xml:space="preserve">
+		<value>Annuleer reservatie</value>
+	</data>
+	<data name="DetailsDenied" xml:space="preserve">
+		<value>Deze reservatie is geannuleerd. Je kan de details niet bekijken.</value>
+	</data>
+	<data name="Legend" xml:space="preserve">
+		<value>Legende</value>
+	</data>
+	<data name="YourReservationLegend" xml:space="preserve">
+		<value>Uw reservatie</value>
+	</data>
+	<data name="AvailableLegend" xml:space="preserve">
+		<value>Beschikbaar</value>
+	</data>
+	<data name="FullyBookedLegend" xml:space="preserve">
+		<value>Volzet</value>
+	</data>
+<data name="PickupPerson" xml:space="preserve">
+  <value>Ophaal persoon</value>
+</data>
+<data name="MentorPerson" xml:space="preserve">
+  <value>Meter/Peter</value>
+</data>
+<data name="CancellationTooLate" xml:space="preserve">
+    <value>Reservaties kunnen alleen geannuleerd worden minimaal 2 dagen voor de reservatiedatum.</value>
+</data>
+<data name="AlreadyCancelled" xml:space="preserve">
+    <value>Deze reservatie is al geannuleerd.</value>
+</data>
+<data name="CancellationError" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het annuleren van de reservatie.</value>
+</data>
+<data name="CancelReservationTitle" xml:space="preserve">
+    <value>Reservatie annuleren</value>
+</data>
+<data name="CancelReservationConfirmation" xml:space="preserve">
+    <value>Weet u zeker dat u deze reservatie wilt annuleren?</value>
+</data>
+<data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+</data>
+<data name="No" xml:space="preserve">
+    <value>Nee</value>
+</data>
+<data name="Contact" xml:space="preserve">
+    <value>Contact gegevens</value>
+</data>
+<data name="PhoneNumber" xml:space="preserve">
+    <value>Telefoonnummer</value>
+</data>
+<data name="Address" xml:space="preserve">
+    <value>Adres</value>
+</data>
+<data name="ReservationDetails" xml:space="preserve">
+    <value>Reservatie Details</value>
+</data>
+<data name="NoPickupInfo" xml:space="preserve">
+    <value>Geen ophaal informatie beschikbaar</value>
+</data>
+
+</root>

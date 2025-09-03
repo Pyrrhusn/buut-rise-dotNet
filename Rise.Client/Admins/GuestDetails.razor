@@ -1,0 +1,57 @@
+﻿@page "/admin/guests/{id:int}"
+@using Rise.Client.Common
+@using Rise.Client.Common.Buttons
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@using Rise.Shared.Users
+@inject IStringLocalizer<AdminPageResources> Localizer
+
+@layout AdminLayout
+@attribute [Authorize(Roles = nameof(UserRole.Administrator))]
+
+<BackButton Href="/admin/guests" data-testid="back-to-guests-list-button" />
+
+<AsyncData DataFetcher="@FetchUserDetails" @bind-Data="@UserDetails" T="UserDetailDto" @ref="@AsyncDataRef"
+    TestIdPrefix="user-details">
+    <MudPaper Class="pa-4">
+        <MudText data-testid="user-details-page-familyname" Typo="Typo.h3" Class="mb-4">
+            @FormattedFullName
+        </MudText>
+
+        <MudGrid>
+            <MudItem xs="12" sm="6">
+                <MudField Label="@Localizer["NameLabel"]" Variant="Variant.Text" Class="mb-4">
+                    <span data-testid="user-details-page-name">@($"{UserDetails?.FirstName} {UserDetails?.FamilyName}")</span>
+                </MudField>
+                <MudField Label="@Localizer["EmailLabel"]" Variant="Variant.Text" Class="mb-4">
+                    <span data-testid="user-details-page-email">@UserDetails?.Email</span>
+                </MudField>
+            </MudItem>
+
+            <MudItem xs="12" sm="6">
+                <MudField Label="@Localizer["AddressLabel"]" Variant="Variant.Text" Class="mb-4">
+                    <span data-testid="user-details-page-address">@FormattedAddress</span>
+                </MudField>
+                <MudField Label="@Localizer["PhoneLabel"]" Variant="Variant.Text" Class="mb-4">
+                    <span data-testid="user-details-page-phone">@UserDetails?.PhoneNumber</span>
+                </MudField>
+            </MudItem>
+        </MudGrid>
+
+        <div class="d-flex justify-end mt-4">
+            <MudButton data-testid="user-details-page-approve" OnClick="@ApproveGuest" Variant="Variant.Filled"
+                Color="Color.Primary" StartIcon="@Icons.Material.Filled.Check" Size="Size.Medium"
+                Disabled="@isProcessing">
+                @if (isProcessing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">@Localizer["Processing"]</MudText>
+                }
+                else
+                {
+                    @Localizer["Approve"]
+                }
+            </MudButton>
+        </div>
+    </MudPaper>
+</AsyncData>

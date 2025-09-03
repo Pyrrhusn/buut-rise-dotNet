@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Authorizing">
+		<value>Controleren van autorisatie</value>
+	</data>
+	<data name="LoggingIn">
+		<value>Doorverwijzen naar aanmeldpagina</value>
+	</data>
+	<data name="CompletingLoggingIn">
+		<value>Succesvol aangemeld</value>
+	</data>
+	<data name="CompletingLogOut">
+		<value>Afmelding voltooid</value>
+	</data>
+	<data name="LogInFailed">
+		<value>Iets ging fout bij het aanmelden</value>
+	</data>
+	<data name="LogOut">
+		<value>Bezig met afmelden</value>
+	</data>
+	<data name="LogOutSucceeded">
+		<value>U bent afgemelde</value>
+	</data>
+	<data name="LogOutFailed">
+		<value>Iets ging fout bij het afmelden</value>
+	</data>
+
+</root>

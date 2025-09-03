@@ -1,0 +1,45 @@
+﻿@using MudBlazor.Components
+@using System.Reflection.Metadata;
+@using Rise.Client.Utils;
+@inherits ComponentBase
+
+<span>
+    <MudCard @attributes="@AdditionalAttributes" Class="@($"cursor-pointer {Class}")" @onclick="@HandleClick">
+        <MudCardContent>
+            <MudStack Row AlignItems="AlignItems.Center" Style="min-height: 100%;" StretchItems="StretchItems.Middle">
+                <MudIcon Icon="@(Notification.Severity.Icon())" Color="Notification.Severity.Color()"
+                    Size="Size.Large" />
+                <MudStack Spacing="0" Style="min-width: 0">
+                    @if (!string.IsNullOrWhiteSpace(@Notification.Title))
+                    {
+                        <MudText Typo="Typo.h6" Style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                            data-testid="@($"notification-title-{Notification.Id}")">
+                            @Notification.Title
+                        </MudText>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(@Notification.Message))
+                    {
+                        <MudText Typo="Typo.body1" Style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                            data-testid="@($"notification-message-{Notification.Id}")">
+                            @Notification.Message</MudText>
+                    }
+                </MudStack>
+                <MudStack Row AlignItems="AlignItems.Start" Justify="Justify.SpaceBetween"
+                    Style="height: 100%; align-self: stretch;" Spacing="1">
+                    <MudText Typo="Typo.caption" Align="Align.End"
+                        data-testid="@($"notification-timestamp-{Notification.Id}")">
+                        @(Notification.CreatedAt.ToRelativeDateString())
+                    </MudText>
+                    @if (!Notification.IsRead)
+                    {
+                        <MudBadge Color="Color.Info" Style="align-self: flex-start; display: flex; justify-content: center;"
+                            Dot Class="pa-2" Origin="Origin.CenterCenter"
+                            data-testid="@($"notification-is-unread-badge-{Notification.Id}")">
+                        </MudBadge>
+                    }
+                </MudStack>
+            </MudStack>
+        </MudCardContent>
+    </MudCard>
+</span>

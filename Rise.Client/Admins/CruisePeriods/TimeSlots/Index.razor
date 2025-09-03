@@ -1,0 +1,107 @@
+﻿@page "/admin/cruise_period/{Id:int?}/timeslots"
+@using System.Collections.Generic
+@using Rise.Client.Common.Buttons
+@using Rise.Client.Admins.Components
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<AdminPageResources> Localizer
+@using Rise.Client.Common
+@using Rise.Shared.Users
+@using Rise.Shared.TimeSlots
+@attribute [Authorize(Roles = nameof(UserRole.Administrator))]
+
+@layout AdminLayout
+
+<BackButton Href="/admin/cruise_period" data-testid="back-to-cruise-period-list-button" />
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+    <AsyncData DataFetcher="@FetchCruisePeriod" @bind-Data="@CruisePeriod" T="CruisePeriodDetailedDto"
+        TestIdPrefix="cruise-period-details">
+        <MudCard Elevation="3">
+            <MudCardHeader>
+                <MudStack>
+                    <MudText Typo="Typo.h5">@Localizer["ManageTimeSlots"]</MudText>
+                    <MudText Typo="Typo.body1" data-testid="cruise-period-name">
+                        @(CruisePeriod?.Id == null ? Localizer["NewCruisePeriod"] : Localizer["CruisePeriod"])
+                    </MudText>
+                    <MudStack Row="true">
+                        <MudText data-testid="cruise-period-start">
+                            @CruisePeriod?.Start.ToString("dd/MM/yyyy")
+                        </MudText>
+                        <MudText data-testid="cruise-period-end">
+                            @CruisePeriod?.End.ToString("dd/MM/yyyy")
+                        </MudText>
+                    </MudStack>
+                </MudStack>
+            </MudCardHeader>
+
+            <MudDivider Class="my-4" />
+
+            <MudCardContent>
+                <MudForm @ref="form">
+                    <MudPaper Class="pa-4" Elevation="0">
+                        <MudGrid>
+                            <MudItem xs="12" sm="5">
+                                <MudTimePicker @bind-Time="@StartTime" Label="@Localizer["StartTime"]" Class="mt-0"
+                                    PickerVariant="PickerVariant.Dialog" Required="true" data-testid="time-slot-start"
+                                    TimeEditMode="TimeEditMode.Normal" @bind-Time:after="@HandleStartTimeChanged" />
+                            </MudItem>
+                            <MudItem xs="12" sm="5">
+                                <MudTimePicker @bind-Time="@EndTime" Label="@Localizer["EndTime"]" Class="mt-0"
+                                    PickerVariant="PickerVariant.Dialog" Required="true"
+                                    TimeEditMode="TimeEditMode.Normal" data-testid="time-slot-end" />
+                            </MudItem>
+                            <MudItem xs="12" sm="2" Class="d-flex align-center">
+                                <PrimaryButton OnClick="AddTimeSlot" Class="ml-auto" data-testid="add-time-slot-button">
+                                    @Localizer["Add"]
+                                </PrimaryButton>
+                            </MudItem>
+                        </MudGrid>
+                    </MudPaper>
+                </MudForm>
+
+                <MudDivider Class="my-6" />
+
+                <MudText Typo="Typo.h6" Class="mb-4">@Localizer["FixedDailyTimeSlots"]</MudText>
+
+                @if (!AllTimeSlotsDto.TimeSlots.Any())
+                {
+                    <MudAlert Severity="Severity.Info" Elevation="0" data-testid="no-time-slots-message">
+                        @Localizer["NoTimeSlotsMessage"]
+                    </MudAlert>
+                }
+                else
+                {
+                    <MudPaper Class="pa-4" Elevation="0" data-testid="time-slots-list">
+                        <MudList Dense="true" T="TimeSpan">
+                            @foreach (var timeSlot in AllTimeSlotsDto.TimeSlots.OrderBy(t => t.Start))
+                            {
+                                <MudListItem data-testid="time-slot-item">
+                                    <div class="d-flex justify-space-between align-center w-100">
+                                        <div class="d-flex gap-3 align-center">
+                                            <MudIcon Icon="@Icons.Material.Filled.Schedule" />
+                                            <MudText data-testid=@($"time-slot-text-{FormatTimeSlot(timeSlot)}")>
+                                                @FormatTimeSlot(timeSlot)
+                                            </MudText>
+                                        </div>
+                                        <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error"
+                                            Size="Size.Small" OnClick="@(() => RemoveTimeSlot(timeSlot))"
+                                            data-testid="delete-time-slot-button" />
+                                    </div>
+                                </MudListItem>
+                                <MudDivider Class="my-2" />
+                            }
+                        </MudList>
+                    </MudPaper>
+                }
+            </MudCardContent>
+
+            <MudCardActions Class="d-flex justify-end pa-4">
+                <PrimaryButton Disabled="@(!AllTimeSlotsDto.TimeSlots.Any())" OnClick="SaveTimeSlots"
+                    data-testid="save-time-slots-button">
+                    @Localizer["SaveTimeSlots"]
+                </PrimaryButton>
+            </MudCardActions>
+        </MudCard>
+    </AsyncData>
+</MudContainer>

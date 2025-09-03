@@ -1,0 +1,12 @@
+﻿@using Rise.Shared.TimeSlots;
+@using Microsoft.Extensions.Localization;
+@using Rise.Client.Localization.Reservations;
+@inject IStringLocalizer<ReservationPageResources> Localizer;
+
+<MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Class="mt-4 mb-12"
+    data-testid="dialog-payment-content">
+    <MudText Typo="Typo.subtitle2">
+        @Localizer["ProcessingPayment"]<span>@LoadingDots</span>
+    </MudText>
+    <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+</MudStack>

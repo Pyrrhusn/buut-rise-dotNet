@@ -1,0 +1,3 @@
+::deep .selected-notification {
+    border: 1px solid var(--mud-palette-info);
+  }

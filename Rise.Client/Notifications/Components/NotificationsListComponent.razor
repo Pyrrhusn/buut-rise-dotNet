@@ -1,0 +1,23 @@
+﻿@using Rise.Shared.Notifications;
+@using Rise.Client.Localization.Notifications;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<NotificationsPageResources> Localizer;
+
+<span @attributes="AdditionalAttributes">
+    <MudStack Class="@($"notifications-list {(Scrollbar ? "notifications-list-scrollbar" : "")}")" Spacing="2">
+        @if (Notifications != null && Notifications.Any())
+        {
+            @foreach (var notification in Notifications)
+            {
+                <NotificationComponent Notification="notification"
+                    Class="@(SelectedNotification == notification ? "selected-notification" : " ")"
+                    OnClick="@(() => OnNotificationClick.InvokeAsync(notification))"
+                    data-testid="@($"notification-{notification.Id}")" />
+            }
+        }
+        else
+        {
+            <MudText Typo="Typo.body1" Color="Color.Inherit">@Localizer["NoNotifications"]</MudText>
+        }
+    </MudStack>
+</span>

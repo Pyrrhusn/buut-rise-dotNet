@@ -1,0 +1,64 @@
+﻿@using MudBlazor
+@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Layout
+
+@inject IStringLocalizer<LandingPageResource> Localizer
+
+
+<MudPaper Elevation="0" Square="true" Class="px-4 py-8 mud-theme-primary">
+    @* Desktop Footer *@
+    <MudHidden Breakpoint="Breakpoint.SmAndDown">
+        <MudStack Row="true" AlignItems="AlignItems.Center" StretchItems="StretchItems.All" Spacing="16">
+            <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                <MudImage Src="assets/BUUT_logo_white.webp" Alt="buut logo" Height="100" Width="100"
+                    ObjectFit="ObjectFit.Contain" />
+                <MudStack Row="true" Justify="Justify.Center" Spacing="0">
+                    <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" />
+                    <MudIconButton Icon="@Icons.Custom.Brands.Instagram" Color="Color.Inherit" />
+                </MudStack>
+            </MudStack>
+            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Class="h-100">
+                <MudLink Href="/algemene-voorwaarden" Color="Color.Inherit" Typo="Typo.body1">@Localizer["GeneralTerms"]
+                </MudLink>
+                <MudLink Href="/privacybeleid" Color="Color.Inherit" Typo="Typo.body1">@Localizer["PrivacyPolicy"]
+                </MudLink>
+            </MudStack>
+            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Class="h-100">
+                <MudText Class="mb-2">@Localizer["ThanksTo"]</MudText>
+                <MudStack Row="true" Justify="Justify.Center">
+                    <MudImage Src="assets/icons/gent_logo.webp" Alt="Gent logo" Height="50" Width="50"
+                        ObjectFit="ObjectFit.Contain" Class="mx-2" />
+                    <MudImage Src="assets/icons/elektro_zeeland_logo.webp" Alt="Elektro Zeeland logo" Height="50"
+                        Width="50" ObjectFit="ObjectFit.Contain" Class="mx-2" />
+                </MudStack>
+            </MudStack>
+        </MudStack>
+    </MudHidden>
+
+    @* Mobile Footer *@
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <MudStack Spacing="4" AlignItems="AlignItems.Center">
+            <MudImage Src="assets/BUUT_logo_white.webp" Alt="buut logo" Height="80" Width="80"
+                ObjectFit="ObjectFit.Contain" />
+            <MudStack Row="true" Justify="Justify.Center" Spacing="0">
+                <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" />
+                <MudIconButton Icon="@Icons.Custom.Brands.Instagram" Color="Color.Inherit" />
+            </MudStack>
+            <MudDivider DividerType="DividerType.Middle" Class="my-4" />
+            <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                <MudLink Href="/algemene-voorwaarden" Color="Color.Inherit" Typo="Typo.body2">@Localizer["GeneralTerms"]
+                </MudLink>
+                <MudLink Href="/privacybeleid" Color="Color.Inherit" Typo="Typo.body2">@Localizer["PrivacyPolicy"]
+                </MudLink>
+            </MudStack>
+            <MudDivider DividerType="DividerType.Middle" Class="my-4" />
+            <MudText Typo="Typo.body2" Class="mb-2">@Localizer["ThanksTo"]</MudText>
+            <MudStack Row="true" Justify="Justify.Center">
+                <MudImage Src="assets/icons/gent_logo.webp" Alt="Gent logo" Height="40" Width="40"
+                    ObjectFit="ObjectFit.Contain" Class="mx-2" />
+                <MudImage Src="assets/icons/elektro_zeeland_logo.webp" Alt="Elektro Zeeland logo" Height="40" Width="40"
+                    ObjectFit="ObjectFit.Contain" Class="mx-2" />
+            </MudStack>
+        </MudStack>
+    </MudHidden>
+</MudPaper>

@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using Serilog
+
+<MudContainer Class="mud-theme-primary flex-1">
+    <MudStack AlignItems="AlignItems.Center">
+        <MudAvatar Class="mud-avatar-circle ma-4" Color="Color.Secondary" Style="width: 100px; height: 100px;">
+            <MudIcon Icon="@Icons.Material.Filled.Person"
+                Style="width: 40px; height: 40px; color: var(--mud-palette-secondary-contrast-text);">
+
+            </MudIcon>
+        </MudAvatar>
+        <MudText Class="mb-2" data-testid="profile-full-name">
+            @($"{UserProfileDto.FirstName} {UserProfileDto.FamilyName}")
+        </MudText>
+        <MudText Class="mb-2" data-testid="profile-date-of-birth">
+            @UserProfileDto.DateOfBirth.ToString("dd/MM/yyyy")
+        </MudText>
+        <MudText Class="mb-2" data-testid="profile-roles">
+            @{
+                var roles = AuthContext.User.Claims
+                .Where(c => c.Type.Contains("role"))
+                .Select(c => c.Value);
+                @string.Join(", ", roles)
+                ;
+            }
+        </MudText>
+    </MudStack>
+</MudContainer>

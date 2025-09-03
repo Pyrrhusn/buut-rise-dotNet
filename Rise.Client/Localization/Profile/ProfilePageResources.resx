@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="YourProfile">
+		<value>Uw Profiel</value>
+	</data>
+	<data name="Email">
+		<value>Email</value>
+	</data>
+	<data name="FirstName">
+		<value>Voornaam</value>
+	</data>
+	<data name="FamilyName">
+		<value>Familienaam</value>
+	</data>
+	<data name="PhoneNumber">
+		<value>Telefoonnummer</value>
+	</data>
+	<data name="Address">
+		<value>Adres</value>
+	</data>
+	<data name="Street">
+		<value>Straat</value>
+	</data>
+	<data name="Number">
+		<value>Nummer</value>
+	</data>
+	<data name="City">
+		<value>Stad</value>
+	</data>
+	<data name="PostalCode">
+		<value>Postcode</value>
+	</data>
+	<data name="Country">
+		<value>Land</value>
+	</data>
+	<data name="Edit">
+		<value>Bewerk</value>
+	</data>
+	<data name="Cancel">
+		<value>Annuleer</value>
+	</data>
+	<data name="Save">
+		<value>Opslaan</value>
+	</data>
+</root>

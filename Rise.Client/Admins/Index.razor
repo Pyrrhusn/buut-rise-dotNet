@@ -1,0 +1,66 @@
+﻿@page "/admin"
+@using MudBlazor
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@using Rise.Shared.Users
+@using Rise.Client.Common
+@inject IStringLocalizer<AdminPageResources> Localizer
+@layout AdminLayout
+@attribute [Authorize(Roles = nameof(UserRole.Administrator))]
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
+    <MudText Typo="Typo.h3" Class="mb-4">@Localizer["WelcomeToBoatDashboard"]</MudText>
+
+    <MudGrid>
+        <MudItem xs="12" sm="6" md="4">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.DirectionsBoat" Class="mb-2" Color="Color.Primary" Size="Size.Large" />
+                <MudText Typo="Typo.h6">@Localizer["TotalBoats"]</MudText>
+                <AsyncData DataFetcher="@FetchBoatsCount" @bind-Data="@_boatsCount" T="int" @ref="AsyncBoatsRef"
+                    ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert" TestIdPrefix="boats-count">
+                    <MudText Typo="Typo.h4">@_boatsCount</MudText>
+                </AsyncData>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.Today" Class="mb-2" Color="Color.Primary" Size="Size.Large" />
+                <MudText Typo="Typo.h6">@Localizer["TodaysReservations"]</MudText>
+                <AsyncData DataFetcher="@FetchReservationsCount" @bind-Data="@_reservationsCount" T="int" @ref="AsyncReservationsRef"
+                    ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert" TestIdPrefix="reservations-count">
+                    <MudText Typo="Typo.h4">@_reservationsCount</MudText>
+                </AsyncData>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.People" Class="mb-2" Color="Color.Primary" Size="Size.Large" />
+                <MudText Typo="Typo.h6">@Localizer["ActiveMembers"]</MudText>
+                <AsyncData DataFetcher="@FetchUsersCount" @bind-Data="@_usersCount" T="int" @ref="AsyncUsersRef"
+                    ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert" TestIdPrefix="users-count">
+                    <MudText Typo="Typo.h4">@_usersCount</MudText>
+                </AsyncData>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+    <MudCard Class="mt-8">
+        <MudCardHeader>
+            <MudText Typo="Typo.h5">@Localizer["QuickActions"]</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <!-- Add quick action buttons here -->
+        </MudCardContent>
+    </MudCard>
+
+    <MudCard Class="mt-8">
+        <MudCardHeader>
+            <MudText Typo="Typo.h5">@Localizer["BoatLocation"]</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText>@Localizer["BoatLocationDescription"]</MudText>
+        </MudCardContent>
+    </MudCard>
+</MudContainer>

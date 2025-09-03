@@ -1,0 +1,21 @@
+@using Microsoft.Extensions.Localization;
+@using Rise.Client.Localization.Reservations
+@inject IStringLocalizer<ReservationPageResources> Localizer
+
+<MudStack @attributes="AdditionalAttributes">
+    <MudText Typo="Typo.h5">@Localizer["Legend"]</MudText>
+    <div class="d-flex gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.Circle" Size="Size.Small" Color="Color.Primary" />
+        <div>@Localizer["YourReservationLegend"]</div>
+    </div>
+    <div class="d-flex gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.Square" Size="Size.Small"
+            Style="color: var(--mud-palette-gray-lighter)" />
+        <div>@Localizer["AvailableLegend"]</div>
+    </div>
+    <div class="d-flex gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.Square" Size="Size.Small"
+            Style="color: var(--mud-palette-gray-default)" />
+        <div>@Localizer["FullyBookedLegend"]</div>
+    </div>
+</MudStack>

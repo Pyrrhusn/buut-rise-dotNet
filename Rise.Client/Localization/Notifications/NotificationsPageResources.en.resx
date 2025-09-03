@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Notifications">
+		<value>Notifications</value>
+	</data>
+	<data name="SelectNotificationTovView">
+		<value>Select a notification to view</value>
+	</data>
+	<data name="NoNotifications">
+		<value>No notifications</value>
+	</data>
+</root>

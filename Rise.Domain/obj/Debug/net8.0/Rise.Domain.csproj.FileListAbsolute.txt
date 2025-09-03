@@ -1,0 +1,13 @@
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\bin\Debug\net8.0\Rise.Domain.deps.json
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\bin\Debug\net8.0\Rise.Domain.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\bin\Debug\net8.0\Rise.Domain.pdb
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.csproj.AssemblyReference.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.AssemblyInfoInputs.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.AssemblyInfo.cs
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.csproj.CoreCompileInputs.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.sourcelink.json
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\refint\Rise.Domain.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\Rise.Domain.pdb
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Domain\obj\Debug\net8.0\ref\Rise.Domain.dll

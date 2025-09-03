@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="NoTimeSlotAvailable">
+		<value>No timeslots available.</value>
+	</data>
+	<data name="Reserve">
+		<value>Reserve</value>
+	</data>
+	<data name="YourReservations">
+		<value>Your Reservations</value>
+	</data>
+	<data name="CreateReservation" xml:space="preserve">
+		<value>Create Reservation</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Cancel</value>
+	</data>
+	<data name="Close" xml:space="preserve">
+		<value>Close</value>
+	</data>
+	<data name="DateAndTime" xml:space="preserve">
+		<value>Date and Time</value>
+	</data>
+	<data name="Name" xml:space="preserve">
+		<value>Name</value>
+	</data>
+	<data name="Email" xml:space="preserve">
+		<value>Email</value>
+	</data>
+	<data name="ProcessingPayment" xml:space="preserve">
+		<value>Processing payment</value>
+	</data>
+	<data name="ReservationSuccessfulyCreated" xml:space="preserve">
+		<value>Your reservation is successfully created</value>
+	</data>
+	<data name="ErrorLoadingReservations">
+		<value>Something went wrong while fetching the reservations.</value>
+	</data>
+	<data name="Date">
+		<value>Date</value>
+	</data>
+	<data name="FullyBooked">
+		<value>Fully booked</value>
+	</data>
+	<data name="NotAvailable">
+		<value>Not available</value>
+	</data>
+	<data name="Available">
+		<value>Available</value>
+	</data>
+	<!-- New translations -->
+	<data name="UpcomingReservations" xml:space="preserve">
+		<value>Upcoming Reservations</value>
+	</data>
+	<data name="PastReservations" xml:space="preserve">
+		<value>Past Reservations</value>
+	</data>
+	<data name="NoUpcomingReservations" xml:space="preserve">
+		<value>You have no upcoming reservations.</value>
+	</data>
+	<data name="NoPastReservations" xml:space="preserve">
+		<value>You have no past reservations.</value>
+	</data>
+	<data name="Past" xml:space="preserve">
+		<value>Past</value>
+	</data>
+	<data name="Upcoming" xml:space="preserve">
+		<value>Present</value>
+	</data>
+	<data name="ReservationFor" xml:space="preserve">
+		<value>Reservation for</value>
+	</data>
+	<data name="Boat" xml:space="preserve">
+		<value>Boat</value>
+	</data>
+	<data name="Time" xml:space="preserve">
+		<value>Time</value>
+	</data>
+	<data name="ViewDetails" xml:space="preserve">
+		<value>View details</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
+	</data>
+	<data name="LoadingReservations" xml:space="preserve">
+		<value>Loading reservations...</value>
+	</data>
+	<data name="NoReservationsFound" xml:space="preserve">
+		<value>No reservations found.</value>
+	</data>
+	<data name="Cancel Reservation" xml:space="preserve">
+		<value>Cancel reservation</value>
+	</data>
+	<data name="DetailsDenied" xml:space="preserve">
+		<value>This reservation is canceled. You cannot view the details.</value>
+	</data>
+	<data name="Legend" xml:space="preserve">
+		<value>Legend</value>
+	</data>
+	<data name="YourReservationLegend" xml:space="preserve">
+		<value>Your reservation</value>
+	</data>
+	<data name="AvailableLegend" xml:space="preserve">
+		<value>Available</value>
+	</data>
+	<data name="FullyBookedLegend" xml:space="preserve">
+		<value>Fully booked</value>
+	</data>
+	<data name="PickupPerson" xml:space="preserve">
+		<value>Pickup person</value>
+	</data>
+	<data name="MentorPerson" xml:space="preserve">
+		<value>Mentor</value>
+	</data>
+	<data name="CancellationTooLate" xml:space="preserve">
+		<value>Reservations can only be canceled at least 2 days before the reservation date.</value>
+	</data>
+	<data name="AlreadyCancelled" xml:space="preserve">
+		<value>This reservation has already been cancelled.</value>
+	</data>
+	<data name="CancellationError" xml:space="preserve">
+		<value>An error occurred while canceling the reservation.</value>
+	</data>
+	<data name="CancelReservationTitle" xml:space="preserve">
+		<value>Cancel Reservation</value>
+	</data>
+	<data name="CancelReservationConfirmation" xml:space="preserve">
+		<value>Are you sure you want to cancel this reservation?</value>
+	</data>
+	<data name="Yes" xml:space="preserve">
+		<value>Yes</value>
+	</data>
+	<data name="No" xml:space="preserve">
+		<value>No</value>
+	</data>
+	<data name="Contact" xml:space="preserve">
+		<value>Contact details</value>
+	</data>
+	<data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+</data>
+<data name="Address" xml:space="preserve">
+    <value>Address</value>
+</data>
+<data name="ReservationDetails" xml:space="preserve">
+    <value>Reservation Details</value>
+</data>
+<data name="NoPickupInfo" xml:space="preserve">
+    <value>No pickup information available</value>
+</data>
+</root>

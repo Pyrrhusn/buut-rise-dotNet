@@ -1,0 +1,29 @@
+@using MudBlazor
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<AdminPageResources> Localizer
+@inherits LayoutComponentBase
+
+@*add here items for admin menu*@
+
+
+<MudNavLink data-testid="nav-admin-reservations" Href="/admin">
+    DASHBOARD
+</MudNavLink>
+<MudNavLink data-testid="nav-admin-guests" Href="/admin/guests">
+    @Localizer["NewUsers"]
+</MudNavLink>
+
+<MudNavLink data-testid="nav-admin-reservations" Href="/admin/reservations">
+    @Localizer["AdminReservations"]
+</MudNavLink>
+
+<MudNavLink data-testid="nav-admin-cruise-period" Href="/admin/cruise_period">
+    @Localizer["CruisePeriod"]
+</MudNavLink>
+<MudNavLink data-testid="nav-admin-battery" Href="/admin/battery">
+    @Localizer["Battery"]
+</MudNavLink>
+<MudNavLink data-testid="nav-admin-boat" Href="/admin/boat">
+    @Localizer["Boats"]
+</MudNavLink>

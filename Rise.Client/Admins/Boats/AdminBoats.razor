@@ -1,0 +1,92 @@
+﻿@page "/admin/boat"
+@using Rise.Shared.Boats
+@using Rise.Client.Common
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<AdminPageResources> Localizer
+
+@layout AdminLayout
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h4" Class="text-center mb-4">@Localizer["Boats"]</MudText>
+    <MudDivider Class="mb-8" />
+
+    <AsyncData @bind-Data="@boats" @ref="AsyncDataRef" DataFetcher="@LoadBoats" T="List<Rise.Shared.BoatDto>"
+        TestIdPrefix="admin-boats" ShowContentWhenError="true">
+        <MudGrid Spacing="6" Justify="Justify.Center">
+            @if (boats?.Any() ?? false)
+            {
+                @foreach (var boat in boats)
+                {
+                    <MudItem xs="12" sm="6" md="4" data-testid="boat-card">
+                        <MudPaper Elevation="3" Class="pa-4">
+                            <MudGrid>
+                                <!-- Top Menu -->
+                                <MudItem xs="12" Class="d-flex justify-end">
+                                    <MudMenu Icon="@Icons.Material.Filled.MoreVert" data-testid="boat-menu">
+                                        <MudMenuItem Icon="@Icons.Material.Filled.Edit" 
+                                            OnClick="@(() => EditBoat(boat.Id))" 
+                                            data-testid="edit-boat-button">
+                                            @Localizer["EditBoat"]
+                                        </MudMenuItem>
+                                        <MudMenuItem Icon="@Icons.Material.Filled.Delete" 
+                                            OnClick="@(() => DeleteBoat(boat.Id))" 
+                                            data-testid="delete-boat-button">
+                                            @Localizer["DeleteBoat"]
+                                        </MudMenuItem>
+                                    </MudMenu>
+                                </MudItem>
+
+                                <!-- Boat Icon -->
+                                <MudItem xs="12" Class="d-flex justify-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.DirectionsBoat" Size="Size.Large"
+                                        Style="width: 70px; height: 70px; color: #40e0d0;" />
+                                </MudItem>
+
+                                <MudItem xs="12">
+                                    <MudDivider Class="my-4" />
+                                </MudItem>
+
+                                <!-- Boat Name -->
+                                <MudItem xs="12" Class="d-flex justify-center">
+                                    <MudLink Href="@($"admin/boat/{boat.Id}")" Typo="Typo.h6" data-testid="boat-name"
+                                        Class="text-center">
+                                        @boat.PersonalName
+                                    </MudLink>
+                                </MudItem>
+
+                                <MudItem xs="12">
+                                    <MudDivider Class="my-4" />
+                                </MudItem>
+
+                                <!-- Availability Dropdown -->
+                                <MudItem xs="12" Class="d-flex justify-center">
+                                    <MudSelect T="bool" Value="boat.IsAvailable" Label="@Localizer["Availability"]"
+                                        ValueChanged="@(async (bool val) => await UpdateBoatAvailabilityAsync(boat.Id, val))"
+                                        Immediate="true">
+                                        <MudSelectItem T="bool" Value="true">@Localizer["Available"]</MudSelectItem>
+                                        <MudSelectItem T="bool" Value="false">@Localizer["Unavailable"]</MudSelectItem>
+                                    </MudSelect>
+                                </MudItem>
+                            </MudGrid>
+                        </MudPaper>
+                    </MudItem>
+                }
+
+                <MudItem xs="12" Class="d-flex justify-center mt-4">
+                    <MudFab StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary" Size="Size.Large"
+                        OnClick="@HandleAddBoat" data-testid="add-boat-button" Class="ma-2" />
+                </MudItem>
+            }
+            else
+            {
+                <MudItem xs="12" Class="d-flex justify-center">
+                    <MudText Typo="Typo.h6" Color="Color.Secondary" data-testid="no-boats">
+                        @Localizer["NoBoatsAvailable"]
+                    </MudText>
+                </MudItem>
+            }
+        </MudGrid>
+    </AsyncData>
+</MudContainer>

@@ -1,0 +1,32 @@
+﻿@using Rise.Client.Common
+@using Rise.Client.Localization.Reservations
+@using Rise.Shared.TimeSlots
+@using static System.Net.WebRequestMethods
+@using Microsoft.Extensions.Localization
+@using Rise.Shared.Users;
+@inject IStringLocalizer<ReservationPageResources> Localizer
+
+<MudPaper Class="pa-2 h-fill" data-testid="time-slot-list">
+    <MudText Typo="Typo.h5" Class="mud-text-secondary mb-4">@SelectedDate.ToString("dd MMMM yyyy")</MudText>
+    <AsyncData DataFetcher="@FetchTimeSlots" @bind-Data="@TimeSlots" T="IEnumerable<TimeSlotDto>" @ref="AsyncDataRef"
+        ShowContentWhenError="@false" TestIdPrefix="time-slot-list">
+        @* TODO make loader use skeleton *@
+        @if (TimeSlots.Count() == 0)
+        {
+            <MudAlert Severity="Severity.Info" data-testid="time-slots-none">@Localizer["NoTimeSlotAvailable"]</MudAlert>
+        }
+        else
+        {
+            <AsyncData DataFetcher="@FetchUserProfile" @bind-Data="@UserProfileDto" T="@UserProfileDto"
+                @ref="@AsyncUserDataRef" ShowContentWhenError="@false" TestIdPrefix="time-slot-list-inner">
+                <MudStack>
+                    @foreach (TimeSlotDto? timeSlot in TimeSlots)
+                    {
+                        <TimeSlotComponent UserProfileDto="@UserProfileDto" TimeSlot="@timeSlot" Date="@SelectedDate"
+                            RefetchData="@RefetchTimeSlotOverviewData" />
+                    }
+                </MudStack>
+            </AsyncData>
+        }
+    </AsyncData>
+</MudPaper>

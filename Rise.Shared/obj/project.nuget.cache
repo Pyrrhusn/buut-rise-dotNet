@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dqboa7392eM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\iampu\\Documents\\HoGent\\2024-2025\\RISE\\DotNet\\dotnet-2425-gent2\\Rise.Shared\\Rise.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iampu\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512"
+  ],
+  "logs": []
+}

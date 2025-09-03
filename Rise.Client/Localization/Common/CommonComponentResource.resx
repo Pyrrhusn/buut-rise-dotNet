@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="ViewDetails">
+		<value>Zie Details</value>
+	</data>
+	<data name="Back">
+		<value>Terug</value>
+	</data>
+</root>

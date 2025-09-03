@@ -1,0 +1,47 @@
+﻿@using Microsoft.Extensions.Localization
+@using MudBlazor
+@using Rise.Client.Localization.Auth
+@using Rise.Client.Themes
+@using Rise.Client.Common
+@inject IStringLocalizer<AuthPageResources> Localizer
+
+@* Required *@
+<MudThemeProvider Theme="MainTheme.CustomTheme" />
+
+@* Needed for dialogs *@
+<MudDialogProvider FullWidth="true" />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+<MudPopoverProvider />
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <NotAuthorized>
+                @if (context.User.Identity?.IsAuthenticated != true)
+                {
+                    <RedirectToLogin />
+                }
+                else
+                {
+                    <MudAlert Severity="Severity.Error" data-testid="unauthorized">You are not authorized to access this resource.</MudAlert>
+                }
+            </NotAuthorized>
+            <Authorizing>
+                <RedirectAlert data-testid="authorization-loader" AlertSeverity="Severity.Info">
+                    @Localizer["Authorizing"]...
+                </RedirectAlert>
+            </Authorizing>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <MudAlert Severity="Severity.Warning" data-testid="page-not-found">Sorry, there's nothing at this address.
+            </MudAlert>
+        </LayoutView>
+    </NotFound>
+</Router>

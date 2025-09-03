@@ -1,0 +1,35 @@
+﻿@using Microsoft.Extensions.Localization;
+@using Rise.Client.Localization.Layout;
+@inject IStringLocalizer<LandingPageResource> Localizer
+@if (IsMobile)
+{
+    @if (_unreadCount > 0)
+    {
+        <MudBadge Color="Color.Primary" Content="@_unreadCount" Max="99" Overlap Origin="Origin.CenterRight"
+    data-testid="nav-mobile-notifications-count-badge">
+    <MudNavLink Href="notifications" data-testid="nav-mobile-notifications" Icon="@Icons.Material.Filled.Notifications"
+        OnClick="OnNotificationClick">@Localizer["Notifications"]</MudNavLink>
+</MudBadge>
+    }
+    else
+    {
+        <MudNavLink Href="notifications" data-testid="nav-mobile-notifications" Icon="@Icons.Material.Filled.Notifications"
+    OnClick="OnNotificationClick">@Localizer["Notifications"]</MudNavLink>
+    }
+}
+else
+{
+    @if (_unreadCount > 0)
+    {
+        <MudBadge Color="Color.Secondary" Content="@_unreadCount" Max="99" Overlap
+    data-testid="nav-desktop-notifications-count-badge">
+    <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Inherit" Edge="Edge.End"
+        data-testid="nav-desktop-notifications" OnClick="OnNotificationClick" />
+</MudBadge>
+    }
+    else
+    {
+        <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Inherit" Edge="Edge.End"
+    data-testid="nav-desktop-notifications" OnClick="OnNotificationClick" />
+    }
+}

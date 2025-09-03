@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--navmenu-->
+	<data name="Home">
+		<value>HOME</value>
+	</data>
+	<data name="Reserve">
+		<value>RESERVEER</value>
+	</data>
+	<data name="BookNow">
+		<value>BOEK NU</value>
+	</data>
+	<data name="WelcomeMessage">
+		<value>Welkom, {0}</value>
+	</data>
+	<data name="Profile">
+		<value>Profile</value>
+	</data>
+	<data name="Register">
+		<value>Registreer</value>
+	</data>
+	<data name="Notifications">
+		<value>Notifications</value>
+	</data>
+	<data name="Admin">
+		<value>ADMIN</value>
+	</data>
+	<data name="Dashboard">
+		<value>Dashbord</value>
+	</data>
+	<!--navmenu-->
+	<!--footer-->
+	<data name="GeneralTerms">
+		<value>Algemene Voorwaarden</value>
+	</data>
+	<data name="PrivacyPolicy">
+		<value>Privacybeleid</value>
+	</data>
+	<data name="ThanksTo">
+		<value>Met dank aan:</value>
+	</data>
+	<!--footer-->
+</root>

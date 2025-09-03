@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="DashbordPageTitle">
+		<value>Admin Overzicht</value>
+	</data>
+	<data name="NewUsers">
+		<value>GASTEN</value>
+	</data>
+	<data name="GuestUsers">
+		<value>GASTEN</value>
+	</data>
+	<data name="NoUsersAvailable">
+		<value>Geen gasten beschikbaar</value>
+	</data>
+	<data name="Id">
+		<value>ID</value>
+	</data>
+	<data name="FamilyName">
+		<value>Familienaam</value>
+	</data>
+	<data name="Actions">
+		<value>Acties</value>
+	</data>
+	<data name="ViewDetails">
+		<value>Zie Details</value>
+	</data>
+	<data name="Back">
+		<value>Terug</value>
+	</data>
+	<data name="Approve">
+		<value>Aanvaarden</value>
+	</data>
+	<data name="Verwerken">
+		<value>Verwerken</value>
+	</data>
+	<data name="ApproveSuccess">
+		<value>Gast is succesvol goedgekeurd als lid!</value>
+	</data>
+	<data name="ApproveFailure">
+		<value>Gast kon niet worden goedgekeurd: {0}</value>
+	</data>
+	<data name="NameLabel">
+		<value>Naam</value>
+	</data>
+	<data name="EmailLabel">
+		<value>E-mail</value>
+	</data>
+	<data name="AddressLabel">
+		<value>Adres</value>
+	</data>
+	<data name="PhoneLabel">
+		<value>Telefoon</value>
+	</data>
+	<data name="WelcomeToAdminDashboard">
+		<value>Welkom bij de Admin Dashboard</value>
+	</data>
+	<data name="TotalUsers">
+		<value>Totaal Aantal Gebruikers</value>
+	</data>
+	<data name="QuickActions">
+		<value>Snelle Acties</value>
+	</data>
+	<data name="CreateNewUser">
+		<value>Nieuwe Gebruiker Aanmaken</value>
+	</data>
+	<data name="WelcomeToBoatDashboard">
+		<value>Welkom bij het Boten Dashboard</value>
+	</data>
+	<data name="TotalBoats">
+		<value>Totaal Aantal Boten</value>
+	</data>
+	<data name="TodaysReservations">
+		<value>Reserveringen Vandaag</value>
+	</data>
+	<data name="ActiveMembers">
+		<value>Actieve Leden</value>
+	</data>
+	<data name="NewReservation">
+		<value>Nieuwe Reservering</value>
+	</data>
+	<data name="ManageMembers">
+		<value>Ledenbeheer</value>
+	</data>
+	<data name="ViewBoatStatus">
+		<value>Bootstatus Bekijken</value>
+	</data>
+	<data name="BoatLocation">
+		<value>Bootlocatie</value>
+	</data>
+	<data name="BoatLocationDescription">
+		<value>De bootjes hebben als vaste ligplaats de verlaagde kade in de Terneuzenlaan.
+			Vaargebied: van de Meulestedebrug tot aan het Keizerspark.</value>
+	</data>
+	<data name="AdminReservations">
+		<value>RESERVATIONS</value>
+	</data>
+
+	<data name="User">
+		<value>Gebruiker</value>
+	</data>
+	<data name="Date">
+		<value>Datum</value>
+	</data>
+	<data name="Time">
+		<value>Tijd</value>
+	</data>
+	<data name="Boat">
+		<value>Boot</value>
+	</data>
+	<data name="Cancel">
+		<value>Annuleren</value>
+	</data>
+	<data name="Previous">
+		<value>Vorige</value>
+	</data>
+	<data name="Next">
+		<value>Volgende</value>
+	</data>
+	<data name="PastReservations">
+		<value>Verleden reservaties</value>
+	</data>
+	<data name="UpcomingReservations">
+		<value>Komende reservaties</value>
+	</data>
+	<data name="Cancelled">
+		<value>Geannuleerd</value>
+	</data>
+
+
+	<data name="Battery">
+		<value>
+			Batterij
+		</value>
+	</data>
+	<data name="BatteryDetails">
+		<value>
+			Batterij Details
+		</value>
+	</data>
+	<data name="BatteryType">
+		<value>
+			Soort
+		</value>
+	</data>
+	<data name="BatteryMentor">
+		<value>
+			Meter/peter
+		</value>
+	</data>
+	<data name="UpdateBattery">
+		<value>
+			Update
+		</value>
+	</data>
+	<data name="CruisePeriod">
+		<value>
+			Vaarperiode
+		</value>
+	</data>
+	<data name="Start">
+		<value>
+			Start
+		</value>
+	</data>
+	<data name="End">
+		<value>
+			Einde
+		</value>
+	</data>
+	<data name="AddCruisePeriod">
+		<value>Voeg Vaarperiode</value>
+	</data>
+	<data name="ManageTimeSlots">
+		<value>Beheer Tijdsloten</value>
+	</data>
+	<data name="NewCruisePeriod">
+		<value>Nieuwe Vaarperiode</value>
+	</data>
+	<data name="StartTime">
+		<value>Starttijd</value>
+	</data>
+	<data name="EndTime">
+		<value>Eindtijd</value>
+	</data>
+	<data name="Add">
+		<value>Toevoegen</value>
+	</data>
+	<data name="FixedDailyTimeSlots">
+		<value>Vaste Dagelijkse Tijdsloten</value>
+	</data>
+	<data name="NoTimeSlotsMessage">
+		<value>Er zijn nog geen tijdsloten toegevoegd</value>
+	</data>
+	<data name="SaveTimeSlots">
+		<value>Tijdsloten Opslaan</value>
+	</data>
+	<data name="CruisePeriods">
+		<value>Vaarperiodes</value>
+	</data>
+	<data name="Past">
+		<value>Verleden</value>
+	</data>
+	<data name="Future">
+		<value>Toekomst</value>
+	</data>
+	<data name="Period">
+		<value>Periode</value>
+	</data>
+	<data name="AddTimeSlot">
+		<value>Tijdslot Toevoegen</value>
+	</data>
+	<data name="Availability">
+		<value>
+			Beschikbaarheid
+		</value>
+	</data>
+	<data name="Available">
+		<value>
+			Beschikbaar
+		</value>
+	</data>
+	<data name="Unavailable">
+		<value>
+			Niet Beschikbaar
+		</value>
+	</data>
+	<data name="Save">
+		<value>
+			Opslaan
+		</value>
+	</data>
+	<data name="BoatBatteries">
+		<value>Boot {0} Batterijen</value>
+	</data>
+	<data name="AddBattery">
+		<value>Batterij Toevoegen</value>
+	</data>
+	<data name="NoBatteriesAvailable">
+		<value>Geen batterijen beschikbaar</value>
+	</data>
+	<data name="Edit">
+		<value>Bewerken</value>
+	</data>
+	<data name="Delete">
+		<value>Verwijderen</value>
+	</data>
+	<data name="Details">
+		<value>Details</value>
+	</data>
+	<data name="BatteryId">
+		<value>Batterij ID</value>
+	</data>
+	<data name="NoBoatsAvailable">
+		<value>Geen boten beschikbaar</value>
+	</data>
+	<data name="Boats">
+		<value>Boten</value>
+	</data>
+	<data name="PersonalName">
+		<value>Persoonlijke Naam</value>
+	</data>
+	<data name="AddBoat">
+		<value>Boot Toevoegen</value>
+	</data>
+	<data name="EditBoat">
+		<value>Boot Bewerken</value>
+	</data>
+	<data name="DeleteBoat">
+		<value>Boot Verwijderen</value>
+	</data>
+	<data name="Mentor">
+		<value>Mentor</value>
+	</data>
+</root>

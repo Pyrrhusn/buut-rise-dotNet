@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rise.Server</name>
+    </assembly>
+    <members>
+        <member name="M:Rise.Server.Controllers.Boats.BatteryController.GetBattery(System.Int32)">
+            <summary>
+            Gets the information of a battery
+            </summary>
+            <param name="id">battery id</param>
+            <returns>The battery information</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BatteryController.PutBattery(System.Int32,Rise.Shared.Boats.BatteryUpdateDto)">
+            <summary>
+            Update the information of a battery
+            </summary>
+            <param name="id">battery id</param>
+            <param name="newBattery">information to update the battery with</param>
+            <returns>The updated battery</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BatteryController.GetBatteriesByBoat(System.Int32)">
+            <summary>
+            Get all batteries for a boat
+            </summary>
+            <param name="boatId">The boat id for which you want battries</param>
+            <returns>All the battries for a specfic boat</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BoatController.GetActiveBoatsCount">
+            <summary>
+            Gets the count of active boats
+            </summary>
+            <returns>The number of non-deleted boats</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BoatController.GetAllBoats">
+            <summary>
+            Haalt alle boten op.
+            </summary>
+            <returns>Een lijst van boten.</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BoatController.UpdateBoatAvailabilityAsync(System.Int32,System.Boolean)">
+            <summary>
+            Wijzigt de beschikbaarheid van een boot.
+            </summary>
+            <param name="boatId">Het ID van de boot.</param>
+            <param name="isAvailable">De nieuwe beschikbaarheidsstatus.</param>
+            <returns>Geen inhoud als succesvol.</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Boats.BoatController.CreateBoat(Rise.Shared.Boats.CreateBoatDto)">
+            <summary>
+            Creates a new boat.
+            </summary>
+            <returns>The id of the created boat.</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.NotificationController.GetCurrentUserNotifications(System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of notifications for the current user.
+            </summary>
+            <param name="limit">An optional limit to the number of notifications returned. Must be a non-negative integer.</param>
+            <returns>A list of notifications for the current user.</returns>
+            <response code="200">Returns the list of notifications.</response>
+            <response code="400">The limit parameter contains an invalid value (e.g., negative).</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.NotificationController.GetUnreadNotificationCount">
+            <summary>
+            Retrieves the count of unread notifications for the current user.
+            </summary>
+            <returns>The number of unread notifications.</returns>
+            <response code="200">Returns the count of unread notifications.</response>
+            <response code="500">An internal server error occurred while processing the request.</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.NotificationController.MarkNotificationAsRead(System.Int32)">
+            <summary>
+            Marks a specific notification as read.
+            </summary>
+            <param name="id">The ID of the notification to mark as read. Must be a positive integer.</param>
+            <returns>No content on success.</returns>
+            <response code="204">The notification was successfully marked as read.</response>
+            <response code="404">The notification with the specified ID was not found.</response>
+            <response code="500">An internal server error occurred while processing the request.</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetCurrentUserReservations(System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Boolean,System.Int32)">
+            <summary>
+            Gets all reservations for a user.
+            </summary>
+            <remarks>
+            <para>To get the first page, set cursor and isNextPage to null. For ther other pages, use the following logic:</para> 
+            <para>How it works, set the cursor to an Id you get from a request with the following valid parameters (not null):
+            <br/>
+            <para>NextId and isNextPage equals true: get the next page </para>
+            <br/>
+            <para>PreviousId and isNextPage equals false: get the previous page</para></para>
+            </remarks>
+            
+            <param name="cursor">The Id of a entity to fetch relative to, i.e. cursor can be the Id of NextId or PreviousId (see above).</param>
+            <param name="isNextPage">If avaiable, true to get next page or false: to get last page.</param>   
+            <param name="getPast">Get all reservations in the past.</param>
+            <param name="pageSize">Number of items to get in a page.</param>
+            <returns>List of reservations</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.CreateReservation(Rise.Shared.Reservations.CreateReservationDto)">
+            <summary>
+            Creates a reservation for a specific timeslot for the current user
+            </summary>
+            <param name="reservationDto">The details of the reservation to create</param>
+            <returns>The deatils of the created reservation</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetReservationDetails(System.Int32)">
+            <summary>
+            Retrieves the details of a specific reservation by its ID.
+            </summary>
+            <param name="id">The ID of the reservation to retrieve.</param>
+            <returns>The details of the reservation.</returns>
+            <response code="200">Returns the reservation details if found.</response>
+            <response code="400">If the ID is invalid or missing.</response>
+            <response code="404">If no reservation with the specified ID is found.</response>
+            <response code="500">If an error occurs while retrieving the reservation details.</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetAllReservations(System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Int32,System.Boolean)">
+            <summary>
+            Gets all reservations in the system with pagination support for admins.
+            </summary>
+            <remarks>
+            This endpoint is accessible only by admins and supports pagination. 
+            The admin can fetch reservations for all users in the system.
+            </remarks>
+            <param name="cursor">The ID of a reservation to fetch relative to, for pagination.</param>
+            <param name="isNextPage">If available, true to get the next page or false to get the previous page.</param>
+            <param name="pageSize">Number of items to get in a page (default is 10).</param>
+            <param name="showPastReservations"></param>
+            <returns>Paginated list of all reservations in the system.</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetReservationsCount(System.DateOnly)">
+            <summary>
+            Gets the count of reservations for a given date
+            </summary>
+            <param name="date">The date for which to get count of reservations</param>
+            <returns>The count of reservations for the date</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.TimeSlots.TimeSlotController.GetAvailableTimeSlotsInMonth(System.DateOnly,System.DateOnly)">
+            <summary>
+            Gets all time slots during the given date range
+            </summary>
+            <param name="startDate">Date from where the range starts</param>
+            <param name="endDate">Date from where the range ends (inclusive)</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.TimeSlots.TimeSlotController.GetTimeSlotsByDate(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets all time slots for the given date (+2 days from today onwards)
+            </summary>
+            <param name="year">The year</param>
+            <param name="month">The month</param>
+            <param name="day">The day</param>
+            <returns>The timeslots for that day</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetUsersByRole(Rise.Shared.Users.UserRole,System.Int32,System.Int32)">
+            <summary>
+            Get users by role
+            </summary>
+            <param name="role">Role to filter users by (Administrator, Member, Guest).</param>
+            <param name="page">Page number</param>
+            <param name="pageSize">Number of items per page</param>
+            <returns>List of users matching the specified role</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetUserDetails(System.Int32)">
+            <summary>
+            Gets the details of a user
+            </summary>
+            <returns>The details of a user</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetUserProfile">
+            <summary>
+            Gets the profile information of the logged in user
+            </summary>
+            <returns>The profile the logged in user</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.AddMemberRole(Rise.Shared.Users.AddMemberRoleDto)">
+            <summary>
+            Adds memeber role to a user
+            </summary>
+            <param name="request">Dto with id of the user to add member role to</param>
+            <returns>Result of the operation</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.RegisterUser(Rise.Shared.Users.UserRegistrationModelDto)">
+            <summary>
+            Registers a new user
+            </summary>
+            <param name="userDto">Dto with required user information for registration</param>
+            <returns>The id of the registered user</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetUsersByFullName(System.String)">
+            <summary>
+            Get users by FullName
+            </summary>
+            <param name="partialName">A part of a name to use as substring for filtering</param>
+            <returns>List of users matching that match given partial name</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.UpdateUser(Rise.Shared.Users.UpdateUserProfileDto)">
+            <summary>
+            Updates the profile of the logged in user
+            </summary>
+            <param name="userProfileDto">Dto with to be updated user information</param>
+            <returns>No content</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\iampu\\Documents\\HoGent\\2024-2025\\RISE\\DotNet\\dotnet-2425-gent2\\Rise.Server\\wwwroot\\swagger-custom.js",
+      "PackagePath": "staticwebassets\\swagger-custom.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Rise.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Rise.Server.props",
+      "PackagePath": "build\\Rise.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Rise.Server.props",
+      "PackagePath": "buildMultiTargeting\\Rise.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Rise.Server.props",
+      "PackagePath": "buildTransitive\\Rise.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

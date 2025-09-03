@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rise.Server</name>
+    </assembly>
+    <members>
+        <member name="M:Rise.Server.Controllers.NotificationController.GetCurrentUserNotifications(System.Nullable{System.Int32})">
+            <summary>
+            Gets all notifications for the current user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.NotificationController.MarkNotificationAsRead(System.Int32)">
+            <summary>
+            Marks a notification as read.
+            </summary>
+            <param name="id">The ID of the notification to mark as read.</param>
+            <returns></returns>
+            <response code="204">The notification was successfully marked as read.</response>
+            <response code="500">An error occurred while marking the notification as read.</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetCurrentUserReservations(System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Boolean,System.Int32)">
+            <summary>
+            Gets all reservations for a user.
+            </summary>
+            <remarks>
+            <para>To get the first page, set cursor and isNextPage to null. For ther other pages, use the following logic:</para> 
+            <para>How it works, set the cursor to an Id you get from a request with the following valid parameters (not null):
+            <br/>
+            <para>NextId and isNextPage equals true: get the next page </para>
+            <br/>
+            <para>PreviousId and isNextPage equals false: get the previous page</para></para>
+            </remarks>
+            
+            <param name="cursor">The Id of a entity to fetch relative to, i.e. cursor can be the Id of NextId or PreviousId (see above).</param>
+            <param name="isNextPage">If avaiable, true to get next page or false: to get last page.</param>   
+            <param name="getPast">Get all reservations in the past.</param>
+            <param name="pageSize">Number of items to get in a page.</param>
+            <returns>List of reservations</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.CreateReservation(Rise.Shared.Reservations.CreateReservationDto)">
+            <summary>
+            Creates a reservation for a specific timeslot for the current user
+            </summary>
+            <param name="reservationDto">The details of the reservation to create</param>
+            <returns>The deatils of the created reservation</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.ReservationController.GetReservationDetails(System.Int32)">
+            <summary>
+            Retrieves the details of a specific reservation by its ID.
+            </summary>
+            <param name="id">The ID of the reservation to retrieve.</param>
+            <returns>The details of the reservation.</returns>
+            <response code="200">Returns the reservation details if found.</response>
+            <response code="400">If the ID is invalid or missing.</response>
+            <response code="404">If no reservation with the specified ID is found.</response>
+            <response code="500">If an error occurs while retrieving the reservation details.</response>
+        </member>
+        <member name="M:Rise.Server.Controllers.TimeSlotController.GetAvailableTimeSlotsInMonth(System.DateOnly,System.DateOnly)">
+            <summary>
+            Gets all time slots during the given date range
+            </summary>
+            <param name="startDate">Date from where the range starts</param>
+            <param name="endDate">Date from where the range ends (inclusive)</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.TimeSlotController.GetTimeSlotsByDate(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets all time slots for the given date (+2 days from today onwards)
+            </summary>
+            <param name="year">The year</param>
+            <param name="month">The month</param>
+            <param name="day">The day</param>
+            <returns>The timeslots for that day</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetGuestUsers">
+            <summary>
+            Get all the guest users
+            </summary>
+            <returns>List of the guest users</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.GetUserDetails(System.Int32)">
+            <summary>
+            Gets the details of a user
+            </summary>
+            <returns>The details of a user</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.AddMemberRole(Rise.Shared.Users.AddMemberRoleDto)">
+            <summary>
+            Adds memeber role to a user
+            </summary>
+            <param name="request">Dto with id of the user to add member role to</param>
+            <returns>Result of the operation</returns>
+        </member>
+        <member name="M:Rise.Server.Controllers.Users.UserController.RegisterUser(Rise.Shared.Users.UserRegistrationModelDto)">
+            <summary>
+            Registers a new user
+            </summary>
+            <param name="userDto">Dto with required user imformation for registration</param>
+            <returns>The id of the registered user</returns>
+        </member>
+    </members>
+</doc>

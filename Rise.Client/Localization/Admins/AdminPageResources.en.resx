@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="DashbordPageTitle">
+		<value>Admin Dashbord</value>
+	</data>
+	<data name="NewUsers">
+		<value>GUESTS</value>
+	</data>
+	<data name="GuestUsers">
+		<value>GUESTS</value>
+	</data>
+	<data name="NoUsersAvailable">
+		<value>No guest users available</value>
+	</data>
+	<data name="Id">
+		<value>ID</value>
+	</data>
+	<data name="FamilyName">
+		<value>Family Name</value>
+	</data>
+	<data name="Actions">
+		<value>Actions</value>
+	</data>
+	<data name="ViewDetails">
+		<value>Details</value>
+	</data>
+	<data name="Back">
+		<value>Back</value>
+	</data>
+	<data name="Admin">
+		<value>ADMIN</value>
+	</data>
+	<data name="Approve">
+		<value>Approve</value>
+	</data>
+	<data name="Processing">
+		<value>Processing</value>
+	</data>
+	<data name="ApproveSuccess">
+		<value>Guest successfully approved as a member!</value>
+	</data>
+	<data name="ApproveFailure">
+		<value>Failed to approve guest: {0}</value>
+	</data>
+	<data name="NameLabel">
+		<value>Name</value>
+	</data>
+	<data name="EmailLabel">
+		<value>Email</value>
+	</data>
+	<data name="AddressLabel">
+		<value>Address</value>
+	</data>
+	<data name="PhoneLabel">
+		<value>Phone</value>
+	</data>
+	<data name="WelcomeToAdminDashboard">
+		<value>Welcome to Admin Dashboard</value>
+	</data>
+	<data name="TotalUsers">
+		<value>Total Users</value>
+	</data>
+	<data name="CreateNewUser">
+		<value>Create New User</value>
+	</data>
+	<data name="WelcomeToBoatDashboard">
+		<value>Welcome to the Boats Dashboard</value>
+	</data>
+	<data name="TotalBoats">
+		<value>Total Boats</value>
+	</data>
+	<data name="TodaysReservations">
+		<value>Today's Reservations</value>
+	</data>
+	<data name="ActiveMembers">
+		<value>Active Members</value>
+	</data>
+	<data name="QuickActions">
+		<value>Quick Actions</value>
+	</data>
+	<data name="NewReservation">
+		<value>New Reservation</value>
+	</data>
+	<data name="ManageMembers">
+		<value>Manage Members</value>
+	</data>
+	<data name="ViewBoatStatus">
+		<value>View Boat Status</value>
+	</data>
+	<data name="BoatLocation">
+		<value>Boat Location</value>
+	</data>
+	<data name="BoatLocationDescription">
+		<value>The boats are permanently moored at the lowered quay in Terneuzenlaan. Sailing area:
+			from Meulestedebrug to Keizerspark.</value>
+	</data>
+	<data name="CruisePeriod">
+		<value>
+			Cruise Period
+		</value>
+	</data>
+	<data name="Start">
+		<value>
+			Start
+		</value>
+	</data>
+	<data name="End">
+		<value>
+			End
+		</value>
+	</data>
+	<data name="AddCruisePeriod">
+		<value>Add Cruise Period</value>
+	</data>
+	<data name="Battery">
+		<value>
+			Battery
+		</value>
+	</data>
+	<data name="BatteryDetails">
+		<value>
+			Battery Details
+		</value>
+	</data>
+	<data name="BatteryType">
+		<value>
+			Type
+		</value>
+	</data>
+	<data name="BatteryMentor">
+		<value>
+			Mentor
+		</value>
+	</data>
+	<data name="UpdateBattery">
+		<value>
+			Update
+		</value>
+	</data>
+	<data name="ManageTimeSlots">
+		<value>Manage Time Slots</value>
+	</data>
+	<data name="NewCruisePeriod">
+		<value>New Cruise Period</value>
+	</data>
+	<data name="StartTime">
+		<value>Start Time</value>
+	</data>
+	<data name="EndTime">
+		<value>End Time</value>
+	</data>
+	<data name="Add">
+		<value>Add</value>
+	</data>
+	<data name="FixedDailyTimeSlots">
+		<value>Fixed Daily Time Slots</value>
+	</data>
+	<data name="NoTimeSlotsMessage">
+		<value>No time slots have been added yet</value>
+	</data>
+	<data name="SaveTimeSlots">
+		<value>Save Time Slots</value>
+	</data>
+	<data name="CruisePeriods">
+		<value>Cruise Periods</value>
+	</data>
+	<data name="Past">
+		<value>Past</value>
+	</data>
+	<data name="Future">
+		<value>Future</value>
+	</data>
+	<data name="Period">
+		<value>Period</value>
+	</data>
+	<data name="AddTimeSlot">
+		<value>Add Time Slot</value>
+	</data>
+	<data name="Availability">
+		<value>
+			Availability
+		</value>
+	</data>
+	<data name="Available">
+		<value>
+			Available
+		</value>
+	</data>
+	<data name="Unavailable">
+		<value>
+			Unavailable
+		</value>
+	</data>
+	<data name="Save">
+		<value>
+			Save
+		</value>
+	</data>
+	<data name="BoatBatteries">
+		<value>Boot {0} Batteries</value>
+	</data>
+	<data name="AddBattery">
+		<value>Add Battery</value>
+	</data>
+	<data name="NoBatteriesAvailable">
+		<value>No batteries available</value>
+	</data>
+	<data name="Edit">
+		<value>Edit</value>
+	</data>
+	<data name="Delete">
+		<value>Delete</value>
+	</data>
+	<data name="Details">
+		<value>Details</value>
+	</data>
+	<data name="BatteryId">
+		<value>Battery ID</value>
+	</data>
+	<data name="NoBoatsAvailable">
+		<value>No boats available</value>
+	</data>
+	<data name="Boats">
+		<value>Boats</value>
+	</data>
+	<data name="PersonalName">
+		<value>Personal Name</value>
+	</data>
+	<data name="AddBoat">
+		<value>Add Boat</value>
+	</data>
+	<data name="EditBoat">
+		<value>Edit Boat</value>
+	</data>
+	<data name="DeleteBoat">
+		<value>Delete Boat</value>
+	</data>
+	<data name="Mentor">
+		<value>Mentor</value>
+	</data>
+</root>

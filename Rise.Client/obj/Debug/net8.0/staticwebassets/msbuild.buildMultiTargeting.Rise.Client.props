@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Rise.Client.props" />
+</Project>

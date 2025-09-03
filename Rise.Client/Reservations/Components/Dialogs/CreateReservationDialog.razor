@@ -1,0 +1,58 @@
+﻿@using Rise.Shared.TimeSlots;
+@using Rise.Shared.Reservations;
+@using Rise.Client.Reservations.Components.Dialogs.DialogContent;
+@using Microsoft.Extensions.Localization;
+@using Rise.Client.Localization.Reservations
+@inject IStringLocalizer<ReservationPageResources> Localizer
+
+<MudDialog data-testid="reservation-dialog">
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            @Localizer["CreateReservation"]
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        @switch (State)
+        {
+            case DialogState.Overview:
+                <CreateReservationOverviewContent UserProfileDto="@UserProfileDto" Date="@Date" TimeSlot="@TimeSlot" />
+                break;
+            case DialogState.Pay:
+                <CreateReservationPaymentContent />
+                break;
+            case DialogState.Success:
+                <CreatereservationSuccessConent UserProfileDto="@UserProfileDto" Date="@Date" TimeSlot="@TimeSlot" />
+                break;
+
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudGrid Justify="Justify.Center" Class="w-100 px-4" Spacing="2">
+            @if (State == DialogState.Overview)
+            {
+                <MudItem xs="12">
+                    <MudButton Color="Color.Primary" FullWidth="true" OnClick="CreateReservation" Variant="Variant.Filled"
+                        data-testid="dialog-create-button">
+                        @Localizer["CreateReservation"]
+                    </MudButton>
+                </MudItem>
+            }
+            <MudItem>
+                @switch (State)
+                {
+
+                    case DialogState.Overview:
+                        <MudButton OnClick="Cancel" data-testid="dialog-cancel-button">
+                            @Localizer["Cancel"]
+                        </MudButton>
+                        break;
+                    case DialogState.Success:
+                        <MudButton OnClick="Close" data-testid="dialog-close-button">
+                            @Localizer["Close"]
+                        </MudButton>
+                        break;
+                }
+            </MudItem>
+        </MudGrid>
+    </DialogActions>
+</MudDialog>

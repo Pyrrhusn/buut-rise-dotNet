@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--nav
+	menu-->
+	<data name="Home">
+		<value>HOME</value>
+	</data>
+	<data name="Reserve">
+		<value>RESERVE</value>
+	</data>
+	<data name="BookNow">
+		<value>BOOK NOW</value>
+	</data>
+	<data name="WelcomeMessage">
+		<value>Welcome, {0}</value>
+	</data>
+	<data name="Profile">
+		<value>Profile</value>
+	</data>
+	<data name="Register">
+		<value>Register</value>
+	</data>
+	<data name="Notifications">
+		<value>Notifications</value>
+	</data>
+	<data name="Admin">
+		<value>ADMIN</value>
+	</data>
+	<data name="Dashboard">
+		<value>Dashboard</value>
+	</data>
+	<!--navmenu-->
+	<!--footer-->
+	<data name="GeneralTerms">
+		<value>General Terms</value>
+	</data>
+	<data name="PrivacyPolicy">
+		<value>Privacy Policy</value>
+	</data>
+	<data name="ThanksTo">
+		<value>Thanks to:</value>
+	</data>
+	<!--footer-->
+</root>

@@ -1,0 +1,63 @@
+﻿@using Rise.Client.Common.Buttons
+@using Serilog
+@typeparam T
+@typeparam K
+@inherits AsyncData<T>
+
+@if (ShowLoader())
+{
+    @FormContent(LoadingContent(TestIdLoading()))
+}
+else
+{
+    <MudStack Spacing="4">
+        @if (HasError)
+        {
+            @if (ShowStaticAlert())
+            {
+                @InfoContainerContent(ErrorContent(ErrorMessageContent((ErrorMessage, TestIdError()))))
+            }
+            @if (ShowSnackBarAlert())
+            {
+                DisplayErrorOnSnackbar();
+            }
+        }
+
+        @if (ShowContent())
+        {
+            @FormContent(ChildContent)
+        }
+    </MudStack>
+}
+
+@code {
+    [Parameter]
+    public string SuccessMessage { get; set; } = "Successfully submitted data";
+
+    [Parameter]
+    public RenderFragment<(string successMessage, string testId)> SuccessMessageContent { get; set; } = (context) => @<MudText Typo="Typo.body1" data-testid="@context.testId">
+    @context.successMessage</MudText>;
+
+    private void ShowSuccesMessage()
+    {
+        SnackbarService.Add(SuccessMessageContent((SuccessMessage, TestIdSuccess())), Severity.Success);
+    }
+
+    private RenderFragment FormContent(RenderFragment? fields)
+    {
+        return @<MudCard Class="pa-4">
+        <MudForm @ref="@Form" Model="@FormData" Validation="@Validation">
+            <MudCardContent>
+                @fields
+            </MudCardContent>
+        </MudForm>
+        <MudCardActions>
+            <PrimaryButton OnClick="@(async () => await Submit())" Disabled="@(IsLoading)" data-testid="@TestIdSubmit()">
+                Update
+            </PrimaryButton>
+        </MudCardActions>
+    </MudCard>;
+    }
+    @* TODO primary button name *@
+    @* TODO reset button *@
+}

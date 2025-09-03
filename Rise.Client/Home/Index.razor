@@ -1,0 +1,61 @@
+﻿@page "/"
+@page "/home"
+@using MudBlazor
+@using Microsoft.Extensions.Localization
+@using Rise.Client.Common.Buttons
+@using Rise.Client.Localization.Layout
+@using Rise.Client.Home.Components
+@using Rise.Client.Localization.Home
+@inject NavigationManager navigation
+@inject IStringLocalizer<HomePageResources> Localizer
+
+@layout EmptyLayout
+
+<PageTitle>@Localizer["PageTitle"]</PageTitle>
+
+<div
+    Style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; min-height: 600px;">
+    <MudImage data-testid="hero-image" Src="assets/images/home.webp" Alt="BUUT Banner" ObjectFit="ObjectFit.Cover"
+        ObjectPosition="ObjectPosition.Center" Style="width: 100%; height: 600px; filter: brightness(0.5);" />
+
+    <div
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; padding: 0 1rem;">
+        <MudContainer MaxWidth="MaxWidth.Medium">
+            <MudText data-testid="hero-title" Typo="Typo.h1" Align="Align.Start" Style="color:white">
+                @Localizer["HeroTitle"]
+            </MudText>
+            <MudText Typo="Typo.h4" Class="mb-4" Align="Align.Start" Style="color:white">
+                @Localizer["HeroSubtitle"]
+            </MudText>
+            <PrimaryButton data-testid="reservation-button" Href="/reservations" Size="Size.Large">
+                @Localizer["ReserveButton"]
+            </PrimaryButton>
+        </MudContainer>
+    </div>
+</div>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-16">
+    <TwoColumnSection ImageSrc="assets/images/water.webp" ImageAlt="Water view" ImageFirst="true"
+        data-testid="boats-section">
+        <ContentSection>
+            <MudText Typo="Typo.h3" Class="mb-4">@Localizer["BoatsTitle"]</MudText>
+            <MudText Typo="Typo.body1" Class="mb-6">
+                @Localizer["BoatsIntro"]
+            </MudText>
+            <MudText Typo="Typo.body1" Class="mb-6">
+                @Localizer["BoatsNames"]
+            </MudText>
+            <MudText Typo="Typo.body1" Class="mb-6">
+                @Localizer["BoatsReservation"]
+            </MudText>
+            <MudText Typo="Typo.body1" Class="mb-6">
+                @Localizer["BoatsLocation"]
+            </MudText>
+            <div Class="d-inline-block">
+                <PrimaryButton data-testid="reservation-button-two-coloum-section" Href="/reservations">
+                    @Localizer["ReserveButton"]
+                </PrimaryButton>
+            </div>
+        </ContentSection>
+    </TwoColumnSection>
+</MudContainer>

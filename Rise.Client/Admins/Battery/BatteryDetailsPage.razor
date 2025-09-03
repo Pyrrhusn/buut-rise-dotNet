@@ -1,0 +1,35 @@
+@page "/admin/battery/{Id:int?}"
+@using MudBlazor
+@using Rise.Client.Admins.Components
+@using Rise.Client.Localization.Admins;
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<AdminPageResources> Localizer
+@using static System.Net.WebRequestMethods
+@using Rise.Client.Common
+@using Rise.Shared.Users
+@using Rise.Shared.Boats
+@using FluentValidation
+@using Rise.Client.Common.Buttons
+@attribute [Authorize(Roles = nameof(UserRole.Administrator))]
+
+@layout AdminLayout
+
+<MudText Typo="Typo.h2">@Localizer["BatteryDetails"]</MudText>
+<AsyncForm T="BatteryDto" K="BatteryUpdateDto" DataFetcher="@FetchBatteryInfo" OnSubmit="@HandleSubmit"
+    DataToFormData="@BatteryToUpdateBattery" @bind-FormData="@batteryModel" @bind-Data:get="@batteryInfo"
+    @bind-Data:set="@OnValueChangeBatteryInfo" Validation="@batteryValidator.ValidateValue" ValidationDelay="0"
+    TestIdPrefix="battery-details">
+    <LoadingContent>
+        <div data-testid="battery-details-placeholder">
+            <MudSkeleton Width="100%" Height="60px" />
+            <MudSkeleton Width="100%" Height="60px" />
+        </div>
+    </LoadingContent>
+    <ChildContent>
+        <MudTextField @bind-Value="batteryModel.Type" For="@(() => batteryModel.Type)" Immediate="true"
+            Label="@Localizer["BatteryType"]" ReadOnly Required FullWidth="@true" data-testid="battery-details-type" />
+        <MudAutocomplete T="UserNameDto" Label="@Localizer["BatteryMentor"]" @bind-Value:get="@mentor"
+            @bind-Value:set="@OnValueChangeMentor"    SearchFunc="@SearchUsers" ToStringFunc="UserNameDtoToString" ShowProgressIndicator="true" Required
+            data-testid="battery-details-mentor-id" />
+    </ChildContent>
+</AsyncForm>

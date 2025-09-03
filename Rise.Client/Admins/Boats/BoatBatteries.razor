@@ -1,0 +1,89 @@
+﻿@page "/admin/boat/{BoatId:int}"
+@using MudBlazor
+@using Rise.Client.Admins.Components
+@using Rise.Client.Common.Buttons
+@using Rise.Client.Localization.Admins
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<AdminPageResources> Localizer
+@using Rise.Client.Common
+@using Rise.Shared.Boats
+@using Rise.Shared.Users
+@attribute [Authorize(Roles = nameof(UserRole.Administrator))]
+
+@layout AdminLayout
+
+<BackButton Href="/admin/boat" data-testid="back-to-boat-list-button" />
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudPaper Elevation="0" Class="pa-4">
+        <MudGrid>
+            <MudItem xs="12">
+                <div class="d-flex justify-space-between align-center">
+                    <MudText data-testid="boat-batteries-page-title" Typo="Typo.h4">
+                        @String.Format(Localizer["BoatBatteries"], BoatId)
+                    </MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add"
+                        data-testid="add-battery-button">
+                        @Localizer["AddBattery"]
+                    </MudButton>
+                </div>
+                <MudDivider Class="my-4" />
+            </MudItem>
+        </MudGrid>
+
+        <AsyncData DataFetcher="@FetchBatteries" @bind-Data="@Batteries" T="IEnumerable<BatteryDto>" @ref="AsyncDataRef"
+            ShowContentWhenError="@false" TestIdPrefix="battery-list">
+            @if (!Batteries.Any())
+            {
+                <MudAlert Severity="Severity.Info" data-testid="batteries-none" Class="mt-4">
+                    @Localizer["NoBatteriesAvailable"]
+                </MudAlert>
+            }
+            else
+            {
+                <MudGrid Spacing="4">
+                    @foreach (var battery in Batteries)
+                    {
+                        <MudItem xs="12" sm="6" md="4" Class="d-flex">
+                            <MudCard Elevation="2" data-testid="battery-card" Class="d-flex flex-column flex-grow-1">
+                                <MudCardHeader Class="min-height: 64px;">
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.h6" data-testid="battery-type">
+                                            @battery.Type
+                                        </MudText>
+                                    </CardHeaderContent>
+                                    <CardHeaderActions>
+                                        <MudMenu Icon="@Icons.Material.Filled.MoreVert" data-testid="battery-menu">
+                                            <MudMenuItem Icon="@Icons.Material.Filled.Edit"
+                                                Href="@($"admin/battery/{battery.Id}")">@Localizer["Edit"]</MudMenuItem>
+                                            <MudMenuItem Icon="@Icons.Material.Filled.Delete">
+                                                @Localizer["Delete"]
+                                            </MudMenuItem>
+                                        </MudMenu>
+                                    </CardHeaderActions>
+                                </MudCardHeader>
+                                <MudCardContent Class="flex-grow-1">
+                                    <MudList Dense="true" T="BatteryDto">
+                                        <MudListItem Icon="@Icons.Material.Filled.Person" data-testid="battery-mentor">
+                                            <div class="d-flex flex-column">
+                                                <MudText>@Localizer["Mentor"]</MudText>
+                                                <MudText Typo="Typo.body2">@battery.Mentor.FullName</MudText>
+                                            </div>
+                                        </MudListItem>
+                                        <MudListItem Icon="@Icons.Material.Filled.Badge" data-testid="battery-id">
+                                            <div class="d-flex flex-column">
+                                                <MudText>@Localizer["BatteryId"]</MudText>
+                                                <MudText Typo="Typo.body2">@battery.Id</MudText>
+                                            </div>
+                                        </MudListItem>
+                                    </MudList>
+                                </MudCardContent>
+                                @*TODO: WE can add mudactions here later... details*@
+                            </MudCard>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </AsyncData>
+    </MudPaper>
+</MudContainer>

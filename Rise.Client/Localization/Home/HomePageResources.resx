@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>BUUT</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Deelbootjes voor Muide - Meulestede - Afrikalaan</value>
+  </data>
+  <data name="ReserveButton" xml:space="preserve">
+    <value>Reserveer</value>
+  </data>
+  <data name="BoatsTitle" xml:space="preserve">
+    <value>DE BOTEN</value>
+  </data>
+  <data name="BoatsIntro" xml:space="preserve">
+    <value>Via het Wijkbudget van Stad Gent kocht VZW Buut drie bootjes aan (type Whaly 450 classic), aangedreven met een elektrische motor.</value>
+  </data>
+  <data name="BoatsNames" xml:space="preserve">
+    <value>Deze 3 bootjes, Lubeck, Limba en Leith werden vernoemd naar straten in de buurt Muide-Meulestee-Afrikalaan. Deze straten verwijzen naar havens. Er werd gekozen voor namen beginnend met de letter L, als eerbetoon aan de overleden buurtwerker Lucien De Ridder.</value>
+  </data>
+  <data name="BoatsReservation" xml:space="preserve">
+    <value>De bootjes kunnen door wijkbewoners online gereserveerd worden.</value>
+  </data>
+  <data name="BoatsLocation" xml:space="preserve">
+    <value>Geniet van op het water van de rust en pracht van onze buurt, van aan de Meulestedebrug tot aan het Keizerspark. De bootjes hebben als vaste ligplaats de verlaagde kade in de Terneuzenlaan.</value>
+  </data>
+</root>

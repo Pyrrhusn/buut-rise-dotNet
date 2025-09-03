@@ -1,0 +1,88 @@
+﻿@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Profile;
+@using Rise.Client.Common.Buttons
+@inject IStringLocalizer<ProfilePageResources> Localizer
+
+<MudContainer>
+    <MudForm Model="@UpdateUserProfileDto" @ref="@Form" Validation="@(Validator.ValidateValue)"
+        Disabled="@(!EditIsEnabled)" Class="mb-4">
+        <MudText Typo="Typo.h4" Class="mt-4">@Localizer["YourProfile"]</MudText>
+        <MudStack>
+            <MudTextField @bind-Value="UpdateUserProfileDto.FirstName" For="@(() => UpdateUserProfileDto.FirstName)"
+                Label="@Localizer["FirstName"]" Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                data-testid="profile-first-name">
+            </MudTextField>
+            <MudTextField @bind-Value="UpdateUserProfileDto.FamilyName" For="@(() => UpdateUserProfileDto.FamilyName)"
+                Label="@Localizer["FamilyName"]" Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                data-testid="profile-family-name">
+            </MudTextField>
+            <MudTextField @bind-Value="UpdateUserProfileDto.PhoneNumber" For="@(() => UpdateUserProfileDto.PhoneNumber)"
+                Label="@Localizer["PhoneNumber"]" Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                data-testid="profile-phone-number">
+            </MudTextField>
+            <MudGrid Spacing="2">
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h5">@Localizer["Address"]</MudText>
+                </MudItem>
+                <MudItem xs="12" sm="8">
+                    <MudTextField @bind-Value="UpdateUserProfileDto.Address.Street"
+                        For="@(() => UpdateUserProfileDto.Address.Street)" Label="@Localizer["Street"]"
+                        Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                        data-testid="profile-street" />
+                </MudItem>
+                <MudItem xs="12" sm="4">
+                    <MudTextField @bind-Value="UpdateUserProfileDto.Address.Number"
+                        For="@(() => UpdateUserProfileDto.Address.Number)" Label="@Localizer["Number"]"
+                        Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                        data-testid="profile-number" />
+                </MudItem>
+                <MudItem xs="12" sm="8">
+                    <MudTextField @bind-Value="UpdateUserProfileDto.Address.City"
+                        For="@(() => UpdateUserProfileDto.Address.City)" Label="@Localizer["City"]"
+                        Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                        data-testid="profile-city" />
+                </MudItem>
+                <MudItem xs="12" sm="4">
+                    <MudTextField @bind-Value="UpdateUserProfileDto.Address.PostalCode"
+                        For="@(() => UpdateUserProfileDto.Address.PostalCode)" Label="@Localizer["PostalCode"]"
+                        Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                        data-testid="profile-postal-code" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField @bind-Value=" UpdateUserProfileDto.Address.Country" ReadOnly="true"
+                        For="@(() => UpdateUserProfileDto.Address.Country)" Label="@Localizer["Country"]"
+                        Required="@EditIsEnabled" OnlyValidateIfDirty="true" Immediate="true"
+                        data-testid="profile-country" />
+                </MudItem>
+            </MudGrid>
+        </MudStack>
+    </MudForm>
+    @if (IsLoading)
+    {
+        <div style="text-align: center;">
+            <MudProgressCircular Indeterminate="true" data-testid="profile-save-loading">
+            </MudProgressCircular>
+        </div>
+    }
+    else
+    {
+        <MudStack Row="true" Class="mb-4" Justify="Justify.FlexEnd">
+            @if (EditIsEnabled)
+            {
+                <PrimaryButton OnClick="@SaveChanges" data-testid="profile-save-button">
+                    @Localizer["Save"]
+                </PrimaryButton>
+                <CancelButton OnClick="@CancelEdit" data-testid="profile-cancel-button">
+                    @Localizer["Cancel"]
+                </CancelButton>
+            }
+            else
+            {
+                <PrimaryButton OnClick="@ToggleEdit" data-testid="profile-edit-button">
+                    @Localizer["Edit"]
+                </PrimaryButton>
+            }
+        </MudStack>
+    }
+
+</MudContainer>

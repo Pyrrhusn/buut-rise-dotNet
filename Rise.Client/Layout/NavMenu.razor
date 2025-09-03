@@ -1,0 +1,132 @@
+@using MudBlazor
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Layout
+@using Rise.Client.Notifications.Components
+@using Rise.Shared.Users
+
+@inject IStringLocalizer<LandingPageResource> Localizer
+
+<MudAppBar Elevation="1">
+
+    @* Always display *@
+    <MudLink Href="home" data-testid="nav-brand-logo">
+        <MudImage Src="assets/BUUT_logo_white.webp" Alt="buut logo" Height="60" Width="60" ObjectFit="ObjectFit.Contain"
+            Class="mr-3" />
+    </MudLink>
+
+    @* NavMenu for desktop *@
+    <MudHidden Breakpoint="Breakpoint.SmAndDown">
+        <MudStack Row="true" AlignItems="AlignItems.Center">
+            <MudNavLink Href="home" data-testid="nav-desktop-home">@Localizer["Home"]</MudNavLink>
+            <AuthorizeView>
+                <Authorized>
+                    <MudNavLink Href="reservations" data-testid="nav-desktop-reservations">@Localizer["Reserve"]
+                    </MudNavLink>
+                    @if (context.User.IsInRole(nameof(UserRole.Administrator)))
+                    {
+                        <MudNavLink Href="admin" data-testid="nav-desktop-admin">@Localizer["Admin"]</MudNavLink>
+                    }
+                </Authorized>
+            </AuthorizeView>
+        </MudStack>
+        <MudSpacer />
+        <MudStack Row="true" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center"
+            StretchItems="StretchItems.Start">
+            <AuthorizeView>
+                <Authorized>
+                    <MudIconButton Href="profile" Edge="Edge.End" Icon="@Icons.Material.Filled.Person"
+                        Color="Color.Inherit" data-testid="nav-desktop-profile" />
+                    <NotificationIndicator IsMobile="false" OnNotificationClick="HandleNotificationButtonClicked"
+                        IsAuthenticated="@_isAuthenticated" />
+
+                    <MudNavLink OnClick="@BeginLogOut" data-testid="nav-desktop-logout"
+                        Icon="@Icons.Material.Filled.Logout" IconColor="Color.Inherit">
+                        Log out
+                    </MudNavLink>
+                </Authorized>
+                <NotAuthorized>
+                    <MudNavLink Href="register" data-testid="nav-desktop-register"
+                        Icon="@Icons.Material.Filled.FollowTheSigns">
+                        @Localizer["Register"]
+                    </MudNavLink>
+                    <MudNavLink Href="authentication/login" data-testid="nav-desktop-login"
+                        Icon="@Icons.Material.Filled.Login">Log in
+                    </MudNavLink>
+                </NotAuthorized>
+            </AuthorizeView>
+        </MudStack>
+
+        <NotificationPopoverComponent @bind-IsOpen="_notificationPopoverOpen" />
+
+        <CultureSelector IsMobile="false" MenuColor="Color.Secondary" />
+    </MudHidden>
+
+    @* NavMenu for mobile *@
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <MudSpacer></MudSpacer>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+            OnClick="@ToggleDrawer" data-testid="nav-drawer-open-button" />
+    </MudHidden>
+
+</MudAppBar>
+
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudDrawer @bind-Open="@_drawerOpen" Elevation="1" Variant="@DrawerVariant.Temporary" Anchor="Anchor.End">
+        <MudDrawerHeader Class="pr-0">
+            <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween">
+                <AuthorizeView>
+                    <Authorized>
+                        <MudAvatar Size="Size.Large" Color="Color.Primary" Variant="Variant.Outlined">
+                            @(!string.IsNullOrWhiteSpace(context.User.Identity?.Name) ? context.User.Identity?.Name[0] :
+                                '?')</MudAvatar>
+                            <MudText>@string.Format(Localizer["WelcomeMessage"], @context.User.Identity?.Name)</MudText>
+                        </Authorized>
+                        <NotAuthorized>
+                            <MudButton Variant="Variant.Filled" Size="Size.Medium" Color="Color.Primary" Href="register"
+                                data-testid="nav-mobile-register">
+                                @Localizer["Register"]
+                            </MudButton>
+                            <MudButton Variant="Variant.Filled" Size="Size.Medium" Color="Color.Primary"
+                                Href="authentication/login" data-testid="nav-mobile-login">
+                                Login
+                            </MudButton>
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </MudStack>
+                <MudSpacer />
+                <MudIconButton Icon="@Icons.Material.Filled.Close" Color="Color.Inherit" OnClick="@ToggleDrawer"
+                    data-testid="nav-drawer-close-button" />
+            </MudDrawerHeader>
+            <MudNavMenu>
+                <MudDivider />
+                <MudNavLink Href="home" data-testid="nav-mobile-home" Match="NavLinkMatch.All">@Localizer["Home"]
+                </MudNavLink>
+                <AuthorizeView>
+                    <Authorized>
+                        <MudNavLink Href="reservations" data-testid="nav-mobile-reservations">@Localizer["Reserve"]
+                        </MudNavLink>
+                        @if (context.User.IsInRole("Administrator"))
+                    {
+                        <MudNavGroup Title="ADMIN" Expanded="true">
+                            <AdminMenu />
+                        </MudNavGroup>
+                    }
+                    <MudDivider />
+                    <MudNavLink Href="profile" data-testid="nav-mobile-profile" Icon="@Icons.Material.Filled.Person">
+                        @Localizer["Profile"]
+                    </MudNavLink>
+                    <NotificationIndicator IsMobile="true" OnNotificationClick="HandleNotificationButtonClicked"
+                        IsAuthenticated="@_isAuthenticated" />
+
+                    <MudDivider />
+                    <MudNavLink OnClick="@BeginLogOut" data-testid="nav-mobile-logout"
+                        Icon="@Icons.Material.Filled.Logout">
+                        Log out</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
+        </MudNavMenu>
+        <MudDivider />
+        <CultureSelector IsMobile="true" MenuColor="Color.Inherit" />
+    </MudDrawer>
+</MudHidden>

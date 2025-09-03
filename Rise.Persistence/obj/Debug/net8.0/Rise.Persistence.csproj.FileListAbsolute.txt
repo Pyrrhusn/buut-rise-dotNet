@@ -1,0 +1,16 @@
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\bin\Debug\net8.0\Rise.Persistence.deps.json
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\bin\Debug\net8.0\Rise.Persistence.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\bin\Debug\net8.0\Rise.Persistence.pdb
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\bin\Debug\net8.0\Rise.Domain.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\bin\Debug\net8.0\Rise.Domain.pdb
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.csproj.AssemblyReference.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.AssemblyInfoInputs.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.AssemblyInfo.cs
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.sourcelink.json
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Per.B7CB580E.Up2Date
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\refint\Rise.Persistence.dll
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\Rise.Persistence.pdb
+C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Persistence\obj\Debug\net8.0\ref\Rise.Persistence.dll

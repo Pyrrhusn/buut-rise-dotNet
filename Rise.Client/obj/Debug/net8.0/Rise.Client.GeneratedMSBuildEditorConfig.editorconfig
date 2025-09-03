@@ -1,0 +1,250 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudIllegalParameters = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Rise.Client
+build_property.RootNamespace = Rise.Client
+build_property.ProjectDir = C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\iampu\Documents\HoGent\2024-2025\RISE\DotNet\dotnet-2425-gent2\Rise.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Battery/BatteryDetailsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEJhdHRlcnlcQmF0dGVyeURldGFpbHNQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Boats/AdminBoats.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEJvYXRzXEFkbWluQm9hdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Boats/BoatBatteries.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEJvYXRzXEJvYXRCYXR0ZXJpZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Boats/Dialogs/CreateBoatDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEJvYXRzXERpYWxvZ3NcQ3JlYXRlQm9hdERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Components/GuestUserRow.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXENvbXBvbmVudHNcR3Vlc3RVc2VyUm93LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Components/ReservationsOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXENvbXBvbmVudHNcUmVzZXJ2YXRpb25zT3ZlcnZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/CruisePeriods/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXENydWlzZVBlcmlvZHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/CruisePeriods/TimeSlots/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXENydWlzZVBlcmlvZHNcVGltZVNsb3RzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/GuestDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEd1ZXN0RGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Guests.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEd1ZXN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Admins/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = QWRtaW5zXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Auth/Authentication.razor]
+build_metadata.AdditionalFiles.TargetPath = QXV0aFxBdXRoZW50aWNhdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Auth/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = QXV0aFxSZWRpcmVjdFRvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/AsyncData.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEFzeW5jRGF0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/AsyncForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEFzeW5jRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/Buttons/BackButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEJ1dHRvbnNcQmFja0J1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/Buttons/CancelButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEJ1dHRvbnNcQ2FuY2VsQnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/Buttons/DetailsButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEJ1dHRvbnNcRGV0YWlsc0J1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/Buttons/PrimaryButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXEJ1dHRvbnNcUHJpbWFyeUJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Common/RedirectAlert.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tbW9uXFJlZGlyZWN0QWxlcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Home/Components/TwoColumnSection.razor]
+build_metadata.AdditionalFiles.TargetPath = SG9tZVxDb21wb25lbnRzXFR3b0NvbHVtblNlY3Rpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Home/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = SG9tZVxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/AdminLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEFkbWluTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/AdminMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEFkbWluTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/CultureSelector.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEN1bHR1cmVTZWxlY3Rvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/EmptyLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEVtcHR5TGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Layout/NotificationIndicator.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5vdGlmaWNhdGlvbkluZGljYXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Notifications/Components/NotificationDetailsComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90aWZpY2F0aW9uc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvbkRldGFpbHNDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Notifications/Components/NotificationPopoverComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90aWZpY2F0aW9uc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvblBvcG92ZXJDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Notifications/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90aWZpY2F0aW9uc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Profile/Components/LeftProfilePanel.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZmlsZVxDb21wb25lbnRzXExlZnRQcm9maWxlUGFuZWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Profile/Components/RightProfilePanel.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZmlsZVxDb21wb25lbnRzXFJpZ2h0UHJvZmlsZVBhbmVsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Profile/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZmlsZVxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Register/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVnaXN0ZXJcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/CustomCalendar/CustomCalendar.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcQ3VzdG9tQ2FsZW5kYXJcQ3VzdG9tQ2FsZW5kYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/CustomCalendar/CustomDayComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcQ3VzdG9tQ2FsZW5kYXJcQ3VzdG9tRGF5Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/CustomCalendar/CustomMonthView.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcQ3VzdG9tQ2FsZW5kYXJcQ3VzdG9tTW9udGhWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/CustomCalendar/ReservationCalendarLegend.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcQ3VzdG9tQ2FsZW5kYXJcUmVzZXJ2YXRpb25DYWxlbmRhckxlZ2VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/Dialogs/CancelReservationDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcRGlhbG9nc1xDYW5jZWxSZXNlcnZhdGlvbkRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/Dialogs/CreateReservationDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcRGlhbG9nc1xDcmVhdGVSZXNlcnZhdGlvbkRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/Dialogs/DialogContent/CreateReservationOverviewContent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcRGlhbG9nc1xEaWFsb2dDb250ZW50XENyZWF0ZVJlc2VydmF0aW9uT3ZlcnZpZXdDb250ZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/Dialogs/DialogContent/CreateReservationPaymentContent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcRGlhbG9nc1xEaWFsb2dDb250ZW50XENyZWF0ZVJlc2VydmF0aW9uUGF5bWVudENvbnRlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/Dialogs/DialogContent/CreatereservationSuccessConent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcRGlhbG9nc1xEaWFsb2dDb250ZW50XENyZWF0ZXJlc2VydmF0aW9uU3VjY2Vzc0NvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/ReservationDetals/ReservationDetals.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcUmVzZXJ2YXRpb25EZXRhbHNcUmVzZXJ2YXRpb25EZXRhbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/TimeSlotList/TimeSlotComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcVGltZVNsb3RMaXN0XFRpbWVTbG90Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/TimeSlotList/TimeSlotsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcVGltZVNsb3RMaXN0XFRpbWVTbG90c0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/TimeSlotOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcVGltZVNsb3RPdmVydmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Components/UserReservations.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXENvbXBvbmVudHNcVXNlclJlc2VydmF0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Reservations/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVzZXJ2YXRpb25zXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Notifications/Components/NotificationComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90aWZpY2F0aW9uc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvbkNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vs1xovgns6
+
+[C:/Users/iampu/Documents/HoGent/2024-2025/RISE/DotNet/dotnet-2425-gent2/Rise.Client/Notifications/Components/NotificationsListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90aWZpY2F0aW9uc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvbnNMaXN0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-9ermtro0f1

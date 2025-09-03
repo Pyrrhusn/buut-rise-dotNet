@@ -1,0 +1,31 @@
+@page "/reservations"
+@using Microsoft.Extensions.Localization
+@using MudBlazor
+@using Heron.MudCalendar
+@using Rise.Client.Localization.Reservations
+@using Rise.Client.TimeSlots
+@using Rise.Client.Reservations.Components
+@using Rise.Client.Reservations.Components.CustomCalendar
+@using Rise.Client.Reservations.Components.TimeSlotList
+@using Rise.Client.Common
+@using Rise.Shared.Reservations
+@using Rise.Shared.TimeSlots
+@inject IStringLocalizer<ReservationPageResources> Localizer
+@inject ISnackbar Snackbar
+@inject NavigationManager Navigation
+@attribute [Authorize]
+
+<PageTitle>@Localizer["YourReservations"]</PageTitle>
+
+<MudTabs Elevation="0" Centered="true" Class="mb-16" @bind-ActivePanelIndex="@TabIndex">
+    <MudTabPanel Text="@Localizer["Reserve"]" data-testid="tab-reserve">
+        <TimeSlotOverview />
+    </MudTabPanel>
+    <AuthorizeView Roles="Member">
+        <Authorized>
+            <MudTabPanel Text="@Localizer["YourReservations"]" data-testid="tab-your-reservations">
+                <UserReservations Past="@Past" />
+            </MudTabPanel>
+        </Authorized>
+    </AuthorizeView>
+</MudTabs>

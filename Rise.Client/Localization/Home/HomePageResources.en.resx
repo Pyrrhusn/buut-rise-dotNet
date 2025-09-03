@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>BUUT</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Shared boats for Muide - Meulestede - Afrikalaan</value>
+  </data>
+  <data name="ReserveButton" xml:space="preserve">
+    <value>Reserve</value>
+  </data>
+  <data name="BoatsTitle" xml:space="preserve">
+    <value>THE BOATS</value>
+  </data>
+  <data name="BoatsIntro" xml:space="preserve">
+    <value>Through the District Budget of Ghent City, VZW Buut purchased three boats (type Whaly 450 classic), powered by an electric motor.</value>
+  </data>
+  <data name="BoatsNames" xml:space="preserve">
+    <value>These 3 boats, Lubeck, Limba and Leith were named after streets in the Muide-Meulestee-Afrikalaan neighborhood. These streets refer to ports. Names beginning with the letter L were chosen as a tribute to deceased community worker Lucien De Ridder.</value>
+  </data>
+  <data name="BoatsReservation" xml:space="preserve">
+    <value>The boats can be reserved online by neighborhood residents.</value>
+  </data>
+  <data name="BoatsLocation" xml:space="preserve">
+    <value>Enjoy the peace and beauty of our neighborhood from the water, from the Meulestedebrug to the Keizerspark. The boats are permanently moored at the lowered quay in Terneuzenlaan.</value>
+  </data>
+</root>

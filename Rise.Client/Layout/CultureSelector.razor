@@ -1,0 +1,16 @@
+@using System.Globalization
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+
+@using MudBlazor
+
+<MudMenu data-testid="@(IsMobile ? "culture-selector-mobile" : "culture-selector-desktop")" Class="ml-4 "
+    StartIcon="@Icons.Material.Filled.Translate" EndIcon="@Icons.Material.Filled.KeyboardArrowDown"
+    Label="@selectedCulture?.DisplayName" Color="@MenuColor">
+    @foreach (var culture in supportedCultures)
+    {
+        <MudMenuItem data-testid="@culture.DisplayName" @onclick="async () => await OnCultureSelectedAsync(culture)">
+            @culture.DisplayName
+        </MudMenuItem>
+    }
+    </MudMenu>

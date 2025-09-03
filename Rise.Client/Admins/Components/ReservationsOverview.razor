@@ -1,0 +1,124 @@
+﻿@page "/admin/reservations"
+@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Admins
+@using Rise.Shared.Reservations
+@inject IReservationService ReservationService
+@inject ISnackbar Snackbar
+@inject IStringLocalizer<AdminPageResources> Localizer
+@layout AdminLayout
+@attribute [Authorize(Roles = "Administrator")]
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudCard Elevation="3" Class="rounded-lg">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <div class="d-flex align-center">
+                    <MudText Typo="Typo.h4" Class="mr-4">@(ShowPastReservations ? Localizer["PastReservations"] : Localizer["UpcomingReservations"])</MudText>
+                    <MudToggleIconButton 
+                        Toggled="@ShowPastReservations" 
+                        ToggledChanged="@TogglePastReservations"
+                        Icon="@Icons.Material.Filled.Today" 
+                        ToggledIcon="@Icons.Material.Filled.History" 
+                        Color="Color.Primary"
+                        Size="Size.Medium" 
+                        data-testid="admin-reservations-toggle-button" />
+                </div>
+            </CardHeaderContent>
+        </MudCardHeader>
+
+        <MudDivider />
+
+        <MudCardContent Class="pa-0">
+            <MudTable Items="Reservations?.Data" 
+                     Loading="isLoading" 
+                     Hover="true" 
+                     Breakpoint="Breakpoint.Sm"
+                     LoadingProgressColor="Color.Primary">
+                <HeaderContent>
+                    <MudTh>@Localizer["User"]</MudTh>
+                    <MudTh>@Localizer["Date"]</MudTh>
+                    <MudTh>@Localizer["Time"]</MudTh>
+                    <MudTh>@Localizer["Boat"]</MudTh>
+                    <MudTh>@Localizer["Actions"]</MudTh>
+                </HeaderContent>
+                <RowTemplate Context="reservation">
+                    <MudTd DataLabel="@Localizer["User"]" data-testid="admin-reservation-user">
+                        @reservation.UserName
+                    </MudTd>
+                    <MudTd DataLabel="@Localizer["Date"]" data-testid="admin-reservation-date">
+                        @reservation.Date.ToShortDateString()
+                    </MudTd>
+                    <MudTd DataLabel="@Localizer["Time"]" data-testid="admin-reservation-time">
+                        @reservation.Start - @reservation.End
+                    </MudTd>
+                    <MudTd DataLabel="@Localizer["Boat"]" data-testid="admin-reservation-boat">
+                        <div class="d-flex align-center">
+                            <MudIcon Icon="@Icons.Material.Filled.DirectionsBoat" 
+                                    Class="mr-2" 
+                                    Style="color: #40e0d0;" 
+                                    Size="Size.Small" />
+                            @reservation.BoatPersonalName
+                        </div>
+                    </MudTd>
+                    <MudTd DataLabel="@Localizer["Actions"]">
+                        @if (reservation.IsDeleted)
+                        {
+<MudChip Color="Color.Error" 
+         Size="Size.Small"
+         T="string"
+         data-testid="admin-reservation-status">
+    @Localizer["Cancelled"]
+</MudChip>
+                        }
+                        else
+                        {
+                            <MudButton Color="Color.Error" 
+                                     OnClick="@(() => CancelReservation(reservation.Id))"
+                                     Variant="Variant.Filled"
+                                     Style="background-color: #e06540;"
+                                     Size="Size.Small"
+                                     data-testid="admin-reservation-cancel-button">
+                                @Localizer["Cancel"]
+                            </MudButton>
+                        }
+                    </MudTd>
+                </RowTemplate>
+                <NoRecordsContent>
+                    <MudText Class="pa-4">@Localizer["NoReservationsFound"]</MudText>
+                </NoRecordsContent>
+                <LoadingContent>
+                    <MudText Class="pa-4">Loading...</MudText>
+                </LoadingContent>
+            </MudTable>
+        </MudCardContent>
+
+        <MudDivider />
+
+        <MudCardActions Class="d-flex justify-center pa-4">
+            <MudButton OnClick="@LoadPreviousPage" 
+                      StartIcon="@Icons.Material.Filled.ArrowBack" 
+                      Color="Color.Primary"
+                      Variant="Variant.Filled" 
+                      Disabled="!(Reservations?.PreviousId.HasValue ?? false)"
+                      Class="mx-2"
+                      data-testid="admin-reservations-previous">
+                @Localizer["Previous"]
+            </MudButton>
+            <MudButton OnClick="@LoadNextPage" 
+                      EndIcon="@Icons.Material.Filled.ArrowForward" 
+                      Color="Color.Primary"
+                      Variant="Variant.Filled" 
+                      Disabled="!(Reservations?.NextId.HasValue ?? false)"
+                      Class="mx-2"
+                      data-testid="admin-reservations-next">
+                @Localizer["Next"]
+            </MudButton>
+        </MudCardActions>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private RenderFragment<String> RenderErrorMessage => (text) => @<MudText Typo="Typo.body1"
+        data-testid="admin-cancel-reservation-error">
+        @text</MudText>;
+}

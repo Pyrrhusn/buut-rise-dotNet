@@ -1,0 +1,27 @@
+﻿@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Admins
+@using Rise.Client.Common.Buttons
+@inject IStringLocalizer<AdminPageResources> Localizer
+
+<MudForm Model="@Boat" @ref="@Form" Validation="@Validator.ValidateValue" Class="ma-4" Spacing="8">
+    <MudTextField @bind-Value="Boat.PersonalName" For="@(() => Boat.PersonalName)" Label="@Localizer["NameLabel"]"
+        Required="true" Immediate="true">
+    </MudTextField>
+    <MudSelect @bind-Value="@(Boat.IsAvailable)" For="@(() => Boat.IsAvailable)" Label="@Localizer["Availability"]"
+        Immediate="true" Required="true">
+        <MudSelectItem T="bool" Value="true">@Localizer["Available"]</MudSelectItem>
+        <MudSelectItem T="bool" Value="false">@Localizer["Unavailable"]</MudSelectItem>
+    </MudSelect>
+    @if (IsLoading)
+    {
+        <div style="text-align: center;">
+            <MudProgressCircular Indeterminate="true"></MudProgressCircular>
+        </div>
+    }
+    else
+    {
+        <PrimaryButton OnClick="@SaveBoat">
+            @Localizer["Save"]
+        </PrimaryButton>
+    }
+</MudForm>

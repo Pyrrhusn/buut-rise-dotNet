@@ -1,0 +1,102 @@
+@page "/register"
+@using MudBlazor
+@using FluentValidation
+@using Rise.Shared.Users
+
+@* TODO add localisation *@
+<PageTitle>@Localizer["PageTitle"]</PageTitle>
+
+<MudText Typo="Typo.h4" GutterBottom Align="Align.Center" data-testid="page-title">@Localizer["PageTitle"]</MudText>
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4 rounded" data-testid="register-container">
+    <MudPaper Class="pa-4" data-testid="register-paper">
+        <MudForm Model="@User" @ref="@Form" @bind-IsValid="@isSuccess" Validation="@(validator.ValidateValue)" ValidationDelay="0" data-testid="register-form">
+            <MudGrid Spacing="2">
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h5" data-testid="credentials-title">Credentials</MudText>
+                </MudItem>
+                <MudItem xs="12" data-testid="item-email-field">
+                    <MudTextField @bind-Value="User.Email" Variant="Variant.Outlined" For="@(() => User.Email)"
+                        Label="Email" Immediate="true" Required="true" HelperText="Enter your email address" MaxLength="@UserRegistrationModelDto.Validator.emailMaxLength" data-testid="email-field" />
+                </MudItem>
+                <MudItem xs="12" data-testid="item-password-field">
+                    <MudTextField @bind-Value="User.Password" Variant="Variant.Outlined" For="@(() => User.Password)"
+                        Label="Wachtwoord" InputType="@PasswordInputType" Immediate="true" Required="true"
+                        Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon"
+                        OnAdornmentClick="TogglePasswordIcon" AdornmentAriaLabel="Show Password" HelperText="Enter a strong password" MaxLength="@UserRegistrationModelDto.Validator.passwordMaxLength" data-testid="password-field" />
+                </MudItem>
+                <MudItem xs="12" data-testid="item-repeat-password-field">
+                    <MudTextField T="string" Variant="Variant.Outlined" Label="Herhaal Wachtwoord"
+                        InputType="@PasswordInputType" Required="true" Immediate="true"
+                        Validation="@(new Func<string, string>(CheckPasswordMatch))" HelperText="Repeat your password" MaxLength="@UserRegistrationModelDto.Validator.passwordMaxLength" data-testid="repeat-password-field" />
+                </MudItem>
+            </MudGrid>
+            <MudDivider DividerType="DividerType.Middle" Class="mt-8 mb-8" />
+            <MudGrid Spacing="2">
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h5" data-testid="details-title">Details</MudText>
+                </MudItem>
+                <MudItem xs="12" sm="6" data-testid="item-first-name-field">
+                    <MudTextField @bind-Value="User.FirstName" Variant="Variant.Outlined" For="@(() => User.FirstName)"
+                        Label="Voornaam" Immediate="true" Required="true" HelperText="Enter your first name" MaxLength="@UserRegistrationModelDto.Validator.firstNameMaxLength" data-testid="first-name-field" />
+                </MudItem>
+                <MudItem xs="12" sm="6" data-testid="item-last-name-field">
+                    <MudTextField @bind-Value="User.FamilyName" Variant="Variant.Outlined" For="@(() => User.FamilyName)"
+                        Label="Naam" Immediate="true" Required="true" HelperText="Enter your last name" MaxLength="@UserRegistrationModelDto.Validator.lastNameMaxLength" data-testid="last-name-field" />
+                </MudItem>
+                <MudItem xs="12" sm="4" data-testid="item-date-of-birth-picker">
+                    <MudDatePicker @bind-Date="User.DateOfBirth" Editable="true" Variant="Variant.Outlined"
+                        Label="Geboortedatum" MaxDate="@(DateTime.Today.AddYears(-18))" Required="true"
+                        OpenTo="OpenTo.Year" For="@(() => User.DateOfBirth)" HelperText="Select your date of birth (dd/MM/YYYY)" data-testid="date-of-birth-picker" />
+                </MudItem>
+                <MudItem xs="12" sm="8" data-testid="item-phone-number-field">
+                    <MudTextField @bind-Value="User.PhoneNumber" Variant="Variant.Outlined"
+                        For="@(() => User.PhoneNumber)" Label="GSM Nummer" Immediate="true" Required="true" HelperText="Enter your phone number starting with 0 for local numbers or with a '+' and the country code" MaxLength="@UserRegistrationModelDto.Validator.phoneNumberMaxLength" data-testid="phone-number-field" />
+                </MudItem>
+                </MudGrid>
+            <MudDivider DividerType="DividerType.Middle" Class="mt-8 mb-8" />
+            <MudGrid Spacing="2">
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h5" data-testid="address-title">Address</MudText>
+                </MudItem>
+                <MudItem xs="12" sm="8" data-testid="item-street-field">
+                    <MudTextField @bind-Value="User.Address.Street" Variant="Variant.Outlined"
+                        For="@(() => User.Address.Street)" Label="Straat" Immediate="true" Required="true" HelperText="Enter your street name" MaxLength="@UserRegistrationModelDto.Validator.streetMaxLength" data-testid="street-field" />
+                </MudItem>
+                <MudItem xs="12" sm="4" data-testid="item-house-number-field">
+                    <MudTextField @bind-Value="User.Address.Number" Variant="Variant.Outlined"
+                        For="@(() => User.Address.Number)" Label="Nummer" Immediate="true" Required="true" HelperText="Enter your house number" MaxLength="@UserRegistrationModelDto.Validator.numberMaxLength" data-testid="house-number-field" />
+                </MudItem>
+                <MudItem xs="12" sm="8" data-testid="item-city-field">
+                    <MudTextField @bind-Value="User.Address.City" Variant="Variant.Outlined"
+                        For="@(() => User.Address.City)" Label="Stad" Immediate="true" Required="true" HelperText="Enter your city" MaxLength="@UserRegistrationModelDto.Validator.cityMaxLength" data-testid="city-field" />
+                </MudItem>
+                <MudItem xs="12" sm="4" data-testid="item-postal-code-field">
+                    <MudTextField @bind-Value="User.Address.PostalCode" Variant="Variant.Outlined"
+                        For="@(() => User.Address.PostalCode)" Label="Postcode" Immediate="true" Required="true" HelperText="Enter your postal code" MaxLength="@UserRegistrationModelDto.Validator.postalCodeMaxLength" data-testid="postal-code-field" />
+                </MudItem>
+                <MudItem xs="12" data-testid="item-country-field">
+                    <MudTextField @bind-Value="User.Address.Country" Variant="Variant.Outlined" ReadOnly="true" 
+                        For="@(() => User.Address.Country)" Label="Land" Immediate="true" Required="true" MaxLength="@UserRegistrationModelDto.Validator.countryMaxLength" data-testid="country-field" />
+                </MudItem>
+                <MudItem xs="12" Class="d-flex justify-end mt-2">
+                    <MudButton Variant="Variant.Filled" Color="Color.Error" Size="Size.Large"
+                        StartIcon="@Icons.Material.Filled.Delete" OnClick="@(() => {Form.ResetAsync(); User.Address.Country = "Belgium";})" Class="mx-2" data-testid="reset-button">
+                        Reset
+                    </MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large"
+                        EndIcon="@Icons.Material.Filled.Send" Disabled="@(!isSuccess || isLoading)"
+                        OnClick="@(async () => await HandleSubmit())" data-testid="register-button">
+                        @if (isLoading)
+                        {
+                                <MudProgressCircular Indeterminate="true" Size="Size.Small" data-testid="loading-indicator" />
+                        }
+                        else
+                        {
+                                @:Register
+                        }
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudForm>
+    </MudPaper>
+</MudContainer>

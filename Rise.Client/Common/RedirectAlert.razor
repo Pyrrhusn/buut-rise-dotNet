@@ -1,0 +1,10 @@
+﻿<MudStack Spacing="5" @attributes="@AdditionalAttributes">
+  <MudAlert Severity="@AlertSeverity">@ChildContent</MudAlert>
+  <MudProgressLinear Color="Color.Primary" Indeterminate="true" Size="Size.Medium" />
+</MudStack>
+
+@code {
+  [Parameter, EditorRequired]
+  public required RenderFragment ChildContent { get; set; }
+
+}

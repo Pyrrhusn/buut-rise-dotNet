@@ -1,0 +1,60 @@
+﻿@using MudBlazor.Extensions
+@inherits MudCalendar
+
+@Render
+
+@code {
+
+    protected override RenderFragment RenderMonthView => @<CustomMonthView AvailableDays="@AvailableDays" />;
+
+    @* ! Copy paste from original component since the individual parts are not extensible, boo *@
+    protected override RenderFragment RenderToolbar =>
+    @<div class="mud-cal-toolbar pa-4">
+        <div class="d-flex align-center">
+            @if (ShowPrevNextButtons)
+        {
+            @if (RenderPreviousButton is not null)
+            @RenderPreviousButton
+
+            @if (RenderNextButton is not null)
+            @RenderNextButton
+
+        }
+            @if (ShowDatePicker && RenderDatePicker is not null)
+        {
+            @RenderDatePicker
+        }
+            @if (ShowTodayButton && RenderTodayButton is not null)
+        {
+            @RenderTodayButton
+        }
+            @if (ToolbarContent != null)
+        {
+            @ToolbarContent
+        }
+        </div>
+        <div>
+            <EnumSwitch Value="@View" T="CalendarView" Color="@Color" AllowedValues="AllowedViews()"
+                ValueChanged="OnViewChanging" />
+        </div>
+    </div>;
+
+    protected virtual RenderFragment RenderPreviousButton => @<MudIconButton Variant="@ButtonVariant" Icon="@Icons.Material.Outlined.ChevronLeft" aria-label="@PrevAriaLabel"
+    Disabled="!CanGoToPreviousRange()" Color="@Color" OnClick="OnPreviousClicked" Class="mx-1"
+    data-testId="calendar-previous" />;
+
+    protected virtual RenderFragment RenderNextButton => @<MudIconButton Variant="@ButtonVariant" Icon="@Icons.Material.Outlined.ChevronRight" aria-label="@NextAriaLabel"
+    Color="@Color" OnClick="OnNextClicked" Class="mr-1" data-testId="calendar-next" />;
+
+    protected virtual RenderFragment RenderDatePicker => @<CalendarDatePicker cker @ref="_datePicker" OpenTo="@(View == CalendarView.Month ? OpenTo.Month : OpenTo.Date)"
+    FirstDayOfWeek="@GetFirstDayOfWeekByCalendarView(View)"
+    FixDay="@(View == CalendarView.Month ? PickerDate?.Day : null)" Date="PickerDate"
+    DateChanged="DatePickerDateChanged" View="View" Variant="ButtonVariant" Color="Color" Class="mx-1"
+    PickerOpened="OnDatePickerOpened"
+    MinDate="AllowPast ? null : DateTime.Today.StartOfMonth(CultureInfo.CurrentCulture)"
+    data-testId="calendar-datepicker" />;
+
+    protected virtual RenderFragment RenderTodayButton => @<MudButton Variant="@ButtonVariant" Color="@Color"
+        OnClick="OnTodayClicked" Class="mx-1" data-testId="calendar-today">@DrawTodayText()
+    </MudButton>;
+}

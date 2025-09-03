@@ -1,0 +1,237 @@
+using Microsoft.EntityFrameworkCore;
+using Rise.Domain.Boats;
+using Rise.Domain.Reservations;
+using Rise.Domain.TimeSlots;
+using Rise.Persistence.Seeders.Boats;
+using Rise.Persistence.Seeders.CruisePeriods;
+using Rise.Persistence.Seeders.Users;
+
+namespace Rise.Persistence.Seeders.Reservations
+{
+    internal class ReservationSeeder(ApplicationDbContext dbContext, TimeSlotSeeder timeSlotSeeder, BoatSeeder boatSeeder, UserSeeder userSeeder) : GeneralSeeder<Reservation>(dbContext)
+    {
+        /// <summary>
+        /// Time slots per day for cruise period that started one month ago and ends until two days before today.
+        /// </summary>
+        /// <see cref="TimeSlotSeeder.PastMonthLong"/>
+        public readonly ReservationPeriodSchedule PastMonthLong = new ReservationPeriodSchedule(timeSlotSeeder.PastMonthLong)
+        .FillPeriod(
+            boatSeeder,
+            userSeeder
+            )
+        ;
+
+
+        /// <summary>
+        /// Time slots per day for cruise period that starts now for a full week.
+        /// </summary>
+        /// <see cref="CruisePeriodSeeder.WeekLong"/>
+        public readonly ReservationPeriodSchedule WeekLong =
+        new ReservationPeriodSchedule(timeSlotSeeder.WeekLong)
+        // Start + 0 day(s)
+        .WithReservationDay(0)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[5])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[3])
+                .Done()
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 1 day(s)
+        .WithReservationDay(1)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[3])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 2 day(s)
+        .WithReservationDay(2)
+            .WithTimeSlot(new TimeOnly(9, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .Done()
+            .WithTimeSlot(new TimeOnly(19, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[2])
+                .Done()
+            .Done()
+        // Start + 5 day(s)
+        .WithReservationDay(5)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Today + 6 day(s)
+        .WithReservationDay(6)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Today + 7 day(s)
+        .WithReservationDay(7)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[3])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[2])
+                .Done()
+            .WithTimeSlot(new TimeOnly(13, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[1])
+                .Done()
+            .Done()
+        ;
+
+
+        /// <summary>
+        /// Time slots per day for cruise period that starts nine days from now for two weeks and 2 days. 
+        /// </summary>
+        /// <see cref="CruisePeriodSeeder.TwoWeekAndTwoDaysLong"/>
+        public readonly ReservationPeriodSchedule TwoWeekAndTwoDaysLong = new ReservationPeriodSchedule(timeSlotSeeder.TwoWeekAndTwoDaysLong)
+        // Start + 0 day(s)
+        .WithReservationDay(0)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .Done()
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 1 day(s)
+        .WithReservationDay(1)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .Done()
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[2])
+                .Done()
+            .Done()
+        // Start + 2 day(s)
+        .WithReservationDay(2)
+            .WithTimeSlot(new TimeOnly(19, 0, 0))
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 3 day(s)
+        .WithReservationDay(3)
+            .WithTimeSlot(new TimeOnly(13, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 5 day(s)
+        .WithReservationDay(5)
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[5])
+                .Done()
+            .Done()
+        // Start + 6 day(s)
+        .WithReservationDay(6)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[3])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[1])
+                .Done()
+            .Done()
+        // Today + 1 week + 5 day(s)
+        .WithReservationDay(12)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[5])
+                .Done()
+            .Done()
+        ;
+
+        /// <summary>
+        /// Time slots per day for cruise period that starts next month from now for a month. 
+        /// </summary>
+        /// <see cref="CruisePeriodSeeder.MonthLong"/>
+        public readonly ReservationPeriodSchedule MonthLong = new ReservationPeriodSchedule(timeSlotSeeder.MonthLong)
+        // Start + 0 day(s)
+        .WithReservationDay(0)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[5])
+                .Done()
+            .WithTimeSlot(new TimeOnly(14, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[3])
+                .Done()
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 3 day(s)
+        .WithReservationDay(3)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[3])
+                .Done()
+            .WithTimeSlot(new TimeOnly(13, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 5 day(s)
+        .WithReservationDay(5)
+            .WithTimeSlot(new TimeOnly(18, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 7 day(s)
+        .WithReservationDay(7)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(13, 0, 0))
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[0])
+                .Done()
+            .WithTimeSlot(new TimeOnly(16, 30, 0))
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[0])
+                .Done()
+            .Done()
+        // Start + 10 day(s)
+        .WithReservationDay(10)
+            .WithTimeSlot(new TimeOnly(10, 0, 0))
+                .AddReservation(boat: boatSeeder.Limba, user: userSeeder.users[0])
+                .AddReservation(boat: boatSeeder.Leith, user: userSeeder.users[2])
+                .AddReservation(boat: boatSeeder.Lubeck, user: userSeeder.users[5])
+                .Done()
+            .Done()
+        ;
+
+        protected override DbSet<Reservation> DbSet => _dbContext.Reservations;
+        protected override IEnumerable<Reservation> Items => new List<Boat>() { boatSeeder.Limba, boatSeeder.Leith, boatSeeder.Lubeck }
+        .SelectMany(b => b.Reservations)
+        .OrderBy(r => r.TimeSlot.Date)
+        .ThenBy(r => r.TimeSlot.Start)
+        .ThenBy(r => r.Boat.Id);
+    }
+}

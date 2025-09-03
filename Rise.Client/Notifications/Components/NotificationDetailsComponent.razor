@@ -1,0 +1,25 @@
+﻿@using Client.Utils;
+@using Rise.Client.Localization.Notifications;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<NotificationsPageResources> Localizer
+
+<MudCard Class="pa-4" @attributes=AdditionalAttributes>
+    @if (Notification != null)
+    {
+        <MudStack>
+            <MudStack Row AlignItems="AlignItems.Center">
+                <MudIcon Icon="@Notification.Severity.Icon()" Color="@Notification.Severity.Color()" Size="Size.Medium" />
+                <MudText Typo="Typo.h6" data-testid="notification-details-title">@Notification.Title</MudText>
+                <MudSpacer />
+                <MudText Typo="Typo.caption" data-testid="notification-details-timestamp">
+                    @Notification.CreatedAt.ToRelativeDateString()</MudText>
+            </MudStack>
+
+            <MudText Typo="Typo.body1" data-testid="notification-details-message">@Notification.Message</MudText>
+        </MudStack>
+    }
+    else
+    {
+        <MudText Typo="Typo.body1">@Localizer["SelectNotificationTovView"]</MudText>
+    }
+</MudCard>

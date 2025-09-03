@@ -1,0 +1,21 @@
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6" Class="d-flex align-center gap-3">
+            <MudIcon Icon="@Icons.Material.Filled.Warning" Color="Color.Error" />
+            @Localizer["CancelReservationTitle"]
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudText Class="my-4">@Localizer["CancelReservationConfirmation"]</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Submit" Color="Color.Error" Variant="Variant.Filled" 
+            data-testid="cancel-confirmation-yes" Class="mr-2">
+            @Localizer["Yes"]
+        </MudButton>
+        <MudButton OnClick="Cancel" Color="Color.Primary" Variant="Variant.Outlined"
+            data-testid="cancel-confirmation-no">
+            @Localizer["No"]
+        </MudButton>
+    </DialogActions>
+</MudDialog> 

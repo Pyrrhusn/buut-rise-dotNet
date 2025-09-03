@@ -1,0 +1,56 @@
+﻿@using Rise.Shared.Notifications;
+@using Rise.Client.Common;
+@using Rise.Client.Localization.Notifications;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<NotificationsPageResources> Localizer;
+
+@if (IsOpen)
+{
+    <MudOverlay Visible="true" OnClick="HandleClose" AutoClose="true" />
+}
+<MudPopover Open="@IsOpen" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.BottomRight"
+    Style="max-width: 400px; z-index: 2000;" Class="pa-4" Fixed="true" Paper="true" data-testid="notifications-popover">
+    <MudButton FullWidth Variant="Variant.Filled" Color="Color.Primary" Class="mb-4" Href="/notifications"
+        OnClick="@HandleClose" data-testid="notifications-popover-button">
+        @Localizer["Notifications"]
+    </MudButton>
+    <AsyncData DataFetcher="@FetchNotifications" @bind-Data="@_notifications" T="IEnumerable<NotificationDto>"
+        @ref="AsyncDataRef" ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert"
+        TestIdPrefix="notifications-popover-list-async-data">
+        <NotificationsListComponent Notifications="_notifications" OnNotificationClick="HandleNotificationClicked"
+            data-testid="notifications-popover-list" />
+    </AsyncData>
+</MudPopover>
+
+@code {
+    [Inject]
+    public required NavigationManager NavigationManager { get; set; }
+
+    [Inject]
+    public required INotificationService NotificationService { get; set; }
+    [Parameter, EditorRequired]
+    public required bool IsOpen { get; set; }
+    [Parameter]
+    public EventCallback<bool> IsOpenChanged { get; set; }
+    private IEnumerable<NotificationDto> _notifications = [];
+
+    public required AsyncData<IEnumerable<NotificationDto>> AsyncDataRef { get; set; }
+
+    private async Task HandleClose()
+    {
+        IsOpen = false;
+        await IsOpenChanged.InvokeAsync(false);
+    }
+
+    private async Task HandleNotificationClicked(NotificationDto notification)
+    {
+        await HandleClose();
+        NavigationManager.NavigateTo($"/notifications/{notification.Id}");
+
+    }
+
+    private Task<IEnumerable<NotificationDto>> FetchNotifications()
+    {
+        return NotificationService.GetUserNotifications(3);
+    }
+}

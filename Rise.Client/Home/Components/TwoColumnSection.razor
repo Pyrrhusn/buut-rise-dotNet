@@ -1,0 +1,24 @@
+﻿@using MudBlazor
+
+<div class="@Class" @attributes="AdditionalAttributes">
+    <MudGrid Spacing="20">
+        @if (!ImageFirst)
+        {
+            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center">
+                @ContentSection
+            </MudItem>
+        }
+
+        <MudItem xs="12" md="6">
+            <MudImage Src="@ImageSrc" Alt="@ImageAlt" ObjectFit="ObjectFit.Cover" Style="width: 100%; height: 100%;"
+                Class="rounded" />
+        </MudItem>
+
+        @if (ImageFirst)
+        {
+            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center">
+                @ContentSection
+            </MudItem>
+        }
+    </MudGrid>
+</div>

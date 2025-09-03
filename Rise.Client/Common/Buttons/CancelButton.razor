@@ -1,0 +1,7 @@
+﻿@using MudBlazor
+
+@*CANCEL BUTTON: size can differ, by default medium*@
+<MudButton Size="@Size" OnClick="@OnClick" @attributes="@AdditionalAttributes" Color="Color.Default"
+    Variant="Variant.Outlined">
+    @ChildContent
+</MudButton>

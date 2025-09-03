@@ -1,0 +1,11 @@
+﻿@using MudBlazor
+
+@using Rise.Client.Localization.Common
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<CommonComponentResource> Localizer
+
+<MudButton Href="@Href" OnClick="@OnClick" Variant="Variant.Text" Color="Color.Primary"
+    @attributes="@AdditionalAttributes" StartIcon="@Icons.Material.Filled.Visibility">
+    @Localizer["ViewDetails"]
+    @ChildContent
+</MudButton>

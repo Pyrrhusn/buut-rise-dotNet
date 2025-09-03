@@ -1,0 +1,39 @@
+﻿@using Rise.Shared.TimeSlots;
+@using Rise.Client.Reservations.Components.Dialogs;
+@using Microsoft.Extensions.Localization;
+@using Rise.Client.Localization.Reservations;
+@inject IStringLocalizer<ReservationPageResources> Localizer;
+
+<MudContainer Class="pa-4" data-testid="dialog-success-content">
+    <MudStack Spacing="4" AlignItems="AlignItems.Center">
+        <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Primary" Size="Size.Large" />
+
+        <MudText Typo="Typo.h5" Color="Color.Primary" Class="text-center">
+            @Localizer["ReservationSuccessfulyCreated"]
+        </MudText>
+
+        <MudPaper Class="pa-4 mt-4" Width="100%">
+            <MudStack>
+                <MudStack>
+                    <MudText Typo="Typo.subtitle2">@Localizer["DateAndTime"]:</MudText>
+                    <MudText Typo="Typo.h5">@Date.ToString("D")</MudText>
+                    <MudText Typo="Typo.h5">@TimeSlot?.Start - @TimeSlot?.End</MudText>
+                </MudStack>
+
+                <MudDivider Class="my-3" />
+
+                <MudStack>
+                    <MudText Typo="Typo.subtitle2">@Localizer["Name"]</MudText>
+                    <MudText>@UserProfileDto.FirstName</MudText>
+                </MudStack>
+
+                <MudDivider Class="my-3" />
+
+                <MudStack>
+                    <MudText Typo="Typo.subtitle2">@Localizer["Email"]</MudText>
+                    <MudText>@UserProfileDto.Email</MudText>
+                </MudStack>
+            </MudStack>
+        </MudPaper>
+    </MudStack>
+</MudContainer>

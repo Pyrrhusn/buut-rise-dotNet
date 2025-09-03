@@ -1,0 +1,39 @@
+﻿@using MudBlazor
+@using Heron.MudCalendar
+@using Microsoft.Extensions.Localization
+@using Rise.Client.Localization.Reservations
+@using Rise.Client.TimeSlots
+@using Rise.Client.Reservations.Components
+@using Rise.Client.Reservations.Components.CustomCalendar
+@using Rise.Client.Reservations.Components.TimeSlotList
+@using Rise.Client.Common
+@using Rise.Shared.Reservations
+@using Rise.Shared.TimeSlots
+@inject IStringLocalizer<ReservationPageResources> Localizer
+@inject NavigationManager Navigation
+
+<MudGrid>
+    <MudItem xs="12" md="8">
+        @* ! DO NOT enable the loader here as it will cause infinitive loading (IDK why) *@
+        <AsyncData DataFetcher="@FetchDateRange" @bind-Data="@TimeSlotRangeInfo" T="TimeSlotRangeInfoDto"
+            @ref="AsyncDateRangeRef" DisableLoader ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert"
+            TestIdPrefix="custom-calendar-reserve">
+            <CustomCalendar ShowTodayButton="true" ShowDay="false" ShowWeek="false" ShowWorkWeek="false" Class="mt-8"
+                data-testid="custom-calendar-reserve" AvailableDays="@AvailableDays"
+                DateRangeChanged="@OnDateRangeChanged" CellClicked="@OnCellClicked" Items="@ReservationsOfCurrentUser">
+                <MonthTemplate>
+                    <CustomDayComponent Context="context" />
+                </MonthTemplate>
+            </CustomCalendar>
+        </AsyncData>
+    </MudItem>
+    <MudItem xs="12" md="4" Class="mt-8">
+        @if (SelectedDate.HasValue)
+        {
+            <TimeSlotsList SelectedDate="@SelectedDate.Value" FetchAvailableDays="() => FetchAndDisplayData(true)" />
+        }
+    </MudItem>
+    <MudItem xs="12">
+        <ReservationCalendarLegend data-testid="custom-calendar-legend" />
+    </MudItem>
+</MudGrid>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="PageTitle">
+		<value>Registreren</value>
+	</data>
+    <data name="Credentials">
+		<value>Authenticatiegegevens</value>
+	</data>
+    <data name="Details">
+		<value>Persoonlijke gegevens</value>
+	</data>
+    <data name="Address">
+		<value>Adres</value>
+	</data>
+    <data name="CountryBelgium">
+		<value>België</value>
+	</data>
+    <data name="FirstName">
+		<value>Voornaam</value>
+	</data>
+    <data name="FirstNameRequired">
+		<value>Voer uw voornaam in.</value>
+	</data>
+    <data name="FirstNameMaxLength">
+		<value>Uw voornaam mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="FirstNameHelperText">
+		<value>Vul uw voornaam in</value>
+	</data>
+    <data name="LastName">
+		<value>Naam</value>
+	</data>
+    <data name="LastNameRequired">
+		<value>Voer uw naam in.</value>
+	</data>
+    <data name="LastNameMaxLength">
+		<value>Uw naam mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="LastNameHelperText">
+		<value>Vul uw naam in</value>
+	</data>
+    <data name="Email">
+		<value>E-mail</value>
+	</data>
+    <data name="EmailRequired">
+		<value>Voer uw emailadres in.</value>
+	</data>
+    <data name="EmailNotValid">
+		<value>Het opgegeven e-mailadres is niet geldig.</value>
+	</data>
+    <data name="EmailMaxLength">
+		<value>Uw e-mailadres mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="EmailHelperText">
+		<value>Vul uw emailadres in</value>
+	</data>
+    <data name="Password">
+		<value>Wachtwoord</value>
+	</data>
+    <data name="PasswordRequired">
+		<value>Voer uw wachtwoord in.</value>
+	</data>
+    <data name="PasswordMinLength">
+		<value>Uw wachtwoord moet minstens 8 tekens lang zijn.</value>
+	</data>
+    <data name="PasswordMaxLength">
+		<value>Uw wachtwoord mag niet langer zijn dan 64 tekens.</value>
+	</data>
+    <data name="PasswordHelperText">
+		<value>Voer een sterk wachtwoord in</value>
+	</data>
+    <data name="PasswordAdornmentLabel">
+		<value>Toon wachtwoord</value>
+	</data>
+	<data name="PasswordRepeat">
+		<value>Herhaal wachtwoord</value>
+	</data>
+    <data name="PasswordNoMatch">
+		<value>Wachtwoorden komen niet overeen</value>
+	</data>
+    <data name="PasswordRepeatHelperText">
+		<value>Herhaal uw wachtwoord</value>
+	</data>
+    <data name="PhoneNumber">
+		<value>Telefoonnummer</value>
+	</data>
+    <data name="PhoneNumberRequired">
+		<value>Gelieve uw telefoonnummer op te geven.</value>
+	</data>
+    <data name="PhoneNumberNotValid">
+		<value>Het opgegeven telefoonnummer is niet geldig.</value>
+	</data>
+    <data name="PhoneNumberMaxLength">
+		<value>Uw telefoonnummer mag niet langer zijn dan 25 tekens.</value>
+	</data>
+    <data name="PhoneNumberHelperText">
+		<value>Voer uw telefoonnummer in beginnend met '00' en vervolgens de landcode</value>
+	</data>
+    <data name="DateOfBirth">
+		<value>Geboortedatum</value>
+	</data>
+    <data name="DateOfBirthRequired">
+		<value>Gelieve uw geboortedatum op te geven.</value>
+	</data>
+    <data name="DateOfBirth18Older">
+		<value>U moet minstens 18 jaar oud zijn om te registreren.</value>
+	</data>
+    <data name="DateOfBirthHelperText">
+		<value>Selecteer uw geboortedatum</value>
+	</data>
+    <data name="Street">
+		<value>Straat</value>
+	</data>
+    <data name="StreetRequired">
+		<value>Gelieve uw straatnaam op te geven.</value>
+	</data>
+    <data name="StreetMinLength">
+		<value></value>
+	</data>
+    <data name="StreetMaxLength">
+		<value>Uw straatnaam mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="StreetHelperText">
+		<value>Voer uw straatnaam in</value>
+	</data>
+    <data name="Number">
+		<value>Nummer</value>
+	</data>
+    <data name="NumberRequired">
+		<value>Gelieve uw huisnummer op te geven.</value>
+	</data>
+    <data name="NumberMinLength">
+		<value></value>
+	</data>
+    <data name="NumberMaxLength">
+		<value>Uw huisnummer mag niet langer zijn dan 10 tekens.</value>
+	</data>
+    <data name="NumberHelperText">
+		<value>Voer uw huisnummer in</value>
+	</data>
+    <data name="City">
+		<value>Stad</value>
+	</data>
+    <data name="CityRequired">
+		<value>Gelieve uw stad op te geven.</value>
+	</data>
+    <data name="CityMinLength">
+		<value></value>
+	</data>
+    <data name="CityMaxLength">
+		<value>De naam van de stad mag niet langer zijn dan 200 tekens.</value>
+	</data>
+    <data name="CityHelperText">
+		<value>Voer uw stad in</value>
+	</data>
+    <data name="PostalCode">
+		<value>Postcode</value>
+	</data>
+    <data name="PostalCodeRequired">
+		<value>Gelieve uw postcode op te geven.</value>
+	</data>
+    <data name="PostalCodeMinLength">
+		<value></value>
+	</data>
+    <data name="PostalCodeMaxLength">
+		<value>Postcode mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="PostalCodeHelperText">
+		<value>Voer de postcode van de stad in</value>
+	</data>
+    <data name="Country">
+		<value>Land</value>
+	</data>
+    <data name="CountryRequired">
+		<value>Gelieve uw land op te geven.</value>
+	</data>
+    <data name="CountryMinLength">
+		<value></value>
+	</data>
+    <data name="CountryMaxLength">
+		<value>De naam van het land mag niet langer zijn dan 100 tekens.</value>
+	</data>
+    <data name="CountryHelperText">
+		<value></value>
+	</data>
+</root>

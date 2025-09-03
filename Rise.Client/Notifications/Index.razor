@@ -1,0 +1,28 @@
+﻿@page "/notifications"
+@page "/notifications/{NotificationId:int}"
+@using Rise.Client.Notifications.Components
+@using Rise.Client.Utils;
+@using Rise.Client.Common;
+@using Rise.Shared.Notifications;
+@using Rise.Client.Localization.Notifications;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<NotificationsPageResources> Localizer
+@attribute [Authorize]
+
+<MudContainer>
+    <MudText Typo="Typo.h4" Class="pb-8">@Localizer["Notifications"]</MudText>
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <AsyncData DataFetcher="@FetchNotifications" @bind-Data="@Notifications"
+                @bind-Data:after="@SelectNotificationById" T="IEnumerable<NotificationDto>" @ref="AsyncDataRef"
+                ErrorDisplayMethod="AsyncErrorDisplayMethod.SnackBarAlert" TestIdPrefix="custom-calendar-reserve">
+                <NotificationsListComponent Notifications="Notifications" SelectedNotification="SelectedNotification"
+                    OnNotificationClick="HandleNotificationSelected" data-testid="notifications-list"
+                    Scrollbar="true" />
+            </AsyncData>
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <NotificationDetailsComponent Notification="SelectedNotification" data-testid="notification-details" />
+        </MudItem>
+    </MudGrid>
+</MudContainer>
